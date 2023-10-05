@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import './assets/scss/global.scss'
+import { Route, HashRouter as Router, Routes, Switch } from "react-router-dom"
+import { ProductIndex } from "./views/ProductIndex"
+import { AppHeader } from "./cmps/AppHeader"
+import { AdminPage } from "./views/AdminPage"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <section className="main-app">
+        <AppHeader />
+        <main className="container">
+          <Routes>
+            <Route path="/" element={<ProductIndex />} />
+            <Route path="/admin" element={<AdminPage />} />
+          </Routes>
+        </main>
+      </section>
+    </Router>
+  )
 }
 
-export default App;
+export default App

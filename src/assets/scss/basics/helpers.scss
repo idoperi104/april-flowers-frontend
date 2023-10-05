@@ -1,0 +1,95 @@
+// List
+.clean-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    &>li {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+// Positioning
+.flex {
+    display: flex;
+
+    &.column {
+        flex-direction: column;
+    }
+
+    &.justify-center {
+        justify-content: center;
+    }
+
+    &.align-center {
+        align-items: center;
+    }
+
+    &.wrap {
+        flex-wrap: wrap;
+    }
+
+    &.space-between {
+        justify-content: space-between;
+    }
+
+    &.space-around {
+        justify-content: space-around;
+    }
+
+    &.auto-center {
+        justify-content: center;
+        align-items: center;
+    }
+
+    >*.full-grow {
+        flex: 1;
+    }
+}
+
+// form
+.simple-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 15px auto;
+
+    &>*:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    input:not([type="checkbox"]),
+    button {
+        padding: 5px 8px;
+        width: 100%;
+    }
+
+    .form-errors {
+        text-align: center;
+        margin-top: 24px;
+        color: red;
+        font-size: 15px;
+    }
+}
+
+.form-style {
+    display: grid;
+    gap: em(8px);
+
+    label {
+        font-size: rem(18px);
+        text-transform: capitalize
+    }
+
+    input {
+        height: rem(32px);
+        max-width: rem(480px);
+    }
+
+    select {
+        height: rem(32px);
+        max-width: rem(480px);
+    }
+
+}

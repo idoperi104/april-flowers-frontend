@@ -1,0 +1,25 @@
+.admin-side-bar {
+    // background-color: $clr-3;
+    display: flex;
+    flex-direction: column;
+    width: em(240px);
+    padding: em(16px) em(16px) em(16px) em(16px);
+    gap: em(8px);
+
+    a {
+        height: em(40px);
+        display: flex;
+        align-items: center;
+        gap: em(8px);
+        font-size: em(20px);
+        border-radius: em(8px);
+        padding: em(8px);
+        
+        &:hover{
+            background-color: $clr-3;
+        }
+        &.active{
+            background-color: $clr-1;
+        }
+    }
+}
