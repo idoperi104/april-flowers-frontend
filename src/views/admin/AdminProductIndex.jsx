@@ -2,12 +2,14 @@ import { useDispatch, useSelector } from "react-redux"
 import {
   loadProducts,
   removeProduct,
+  updateProductKeyVal,
 } from "../../store/actions/product.actions"
 import { useCallback, useEffect } from "react"
 import { AdminProductList } from "../../cmps/admin/AdminProductList"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faImage, faPlus } from "@fortawesome/free-solid-svg-icons"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
+import { productService } from "../../services/product.service.local"
 
 export function AdminProductIndex() {
   const products = useSelector(
@@ -30,10 +32,18 @@ export function AdminProductIndex() {
     }
   }, [])
 
+  async function onUpdateProductKeyVal(product, key, val) {
+    try {
+      dispatch(updateProductKeyVal(product, key, val))
+    } catch (error) {
+      console.log("error:", error)
+    }
+  }
+
   if (!products) return <div>Loading...</div>
   return (
     <section className="admin-product-index">
-      <Link className="link-add" to="admin/products/edit">
+      <Link className="link-add" to="edit">
         <button className="btn-add">
           <div className="icon">
             <FontAwesomeIcon icon={faPlus} />
@@ -54,6 +64,7 @@ export function AdminProductIndex() {
 
         <AdminProductList
           products={products}
+          onUpdateProductKeyVal={onUpdateProductKeyVal}
           onRemoveProduct={onRemoveProduct}
         />
       </div>

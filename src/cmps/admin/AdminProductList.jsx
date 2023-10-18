@@ -1,7 +1,7 @@
 import { memo } from "react"
 import { AdminProductPreview } from "./AdminProductPreview"
 
-function _AdminProductList({ products, onRemoveProduct }) {
+function _AdminProductList({ products, onRemoveProduct, onUpdateProductKeyVal }) {
   return (
     <ul className="admin-product-list">
       {products.map((product) => (
@@ -9,6 +9,7 @@ function _AdminProductList({ products, onRemoveProduct }) {
           key={product._id}
           product={product}
           onRemoveProduct={onRemoveProduct}
+          onUpdateProductKeyVal={onUpdateProductKeyVal}
         />
       ))}
     </ul>

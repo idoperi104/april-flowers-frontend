@@ -12,13 +12,20 @@
         justify-self: center;
     }
 
-    .green{
-        color: green;
+    .btn-in-stock{
+        height: 40%;
+        width: 50%;
+        font-size: 18px;
+        border-radius: em(8px, 18px);
+        &.green{
+            background-color: $clr-admin-preview-green;
+        }
+    
+        &.red{
+            background-color: $clr-admin-preview-red;
+        }
     }
 
-    .red{
-        color: red;
-    }
 
     &::before {
         content: '';

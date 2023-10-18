@@ -6,6 +6,7 @@ import { AppHeader } from "./cmps/AppHeader"
 import { AdminPage } from "./views/AdminPage"
 import { AdminDashboard } from "./views/admin/AdminDashboard"
 import { AdminProductIndex } from "./views/admin/AdminProductIndex"
+import { AdminProductEdit } from "./views/admin/AdminProductEdit"
 
 function App() {
   return (
@@ -15,9 +16,11 @@ function App() {
         <main className="container">
           <Routes>
             <Route path="/" element={<ProductIndex />} />
+
             <Route path="/admin" element={<AdminPage />}>
-              <Route path="products" element={<AdminProductIndex />} />
               <Route path="dashboard" element={<AdminDashboard />} />
+              <Route path="products" element={<AdminProductIndex />} />
+              <Route path="products/edit/:id?" element={<AdminProductEdit />} />
               <Route path="categories" element={<AdminDashboard />} />
               <Route path="orders" element={<AdminDashboard />} />
               <Route path="admins" element={<AdminDashboard />} />
