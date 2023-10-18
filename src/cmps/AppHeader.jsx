@@ -26,8 +26,8 @@ export function AppHeader() {
       <nav className="nav-container">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/categories">Categories</NavLink>
-        <NavLink to="/products">All Products</NavLink>
-        <NavLink to="/admin">AdminPage</NavLink>
+        <NavLink to="/product">All Products</NavLink>
+        <NavLink to="/admin/products">AdminPage</NavLink>
       </nav>
 
       <h1 onClick={onLogoClicked} className="logo">

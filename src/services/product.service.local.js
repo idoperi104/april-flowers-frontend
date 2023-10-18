@@ -55,6 +55,7 @@ function getEmptyProduct() {
     isSeveralSizes: false,
     price: 0,
     prices: [],
+    isInStock: true
   }
 }
 

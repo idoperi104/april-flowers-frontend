@@ -1,0 +1,31 @@
+.admin-product-preview {
+    display: grid;
+    grid-template-columns: repeat(5, 2fr) 1fr;
+    // background-color: aquamarine;
+    height: rem(104px);
+    position: relative;
+    align-items: center;
+    font-size: 18px;
+
+    .preview-img{
+        height: em(80px);
+        justify-self: center;
+    }
+
+    .green{
+        color: green;
+    }
+
+    .red{
+        color: red;
+    }
+
+    &::before {
+        content: '';
+        height: 1px;
+        width: 100%;
+        background-color: $clr-2;
+        position: absolute;
+        bottom: 0;
+    }
+}
