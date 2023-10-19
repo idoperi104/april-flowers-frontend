@@ -1,6 +1,7 @@
 .admin-product-preview {
     display: grid;
     grid-template-columns: repeat(5, 2fr) 1fr;
+    gap: 8px;
     // background-color: aquamarine;
     height: rem(104px);
     position: relative;
@@ -13,10 +14,11 @@
     }
 
     .btn-in-stock{
-        height: 40%;
-        width: 50%;
+        height: 45%;
+        width: clamp(10px, 100%, 120px);
         font-size: 18px;
         border-radius: em(8px, 18px);
+        
         &.green{
             background-color: $clr-admin-preview-green;
         }

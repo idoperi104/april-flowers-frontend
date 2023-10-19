@@ -1,0 +1,36 @@
+.admin-product-index {
+    margin: 0 0 em(16px) em(16px);
+    max-width: 1200px;
+}
+
+.admin-product-table {
+    background-color: #fff;
+    border-radius: em(8px);
+
+    .table-header {
+        display: grid;
+        grid-template-columns: repeat(5, 2fr) 1fr;
+        height: em(72px);
+        position: relative;
+        align-items: center;
+        gap: 8px;
+
+
+        &::before {
+            content: '';
+            height: 2px;
+            width: 100%;
+            background-color: $clr-2;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .item {
+            font-weight: 600;
+
+            &:first-child {
+                justify-self: center;
+            }
+        }
+    }
+}

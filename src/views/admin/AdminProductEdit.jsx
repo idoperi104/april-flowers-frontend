@@ -39,17 +39,6 @@ export function AdminProductEdit() {
     }
   }
 
-  const {
-    name,
-    desc,
-    imgUrls,
-    category,
-    isSeveralSizes,
-    price,
-    prices,
-    isInStock,
-  } = product
-
   return (
     <section className="admin-product-edit">
       <h1>{product._id ? "Edit" : "Add"} Product</h1>
@@ -67,10 +56,16 @@ export function AdminProductEdit() {
         <input {...register("price", "number")} />
 
         <label htmlFor="isInStock">is In Stock</label>
-        <input {...register("isInStock", "checkbox")} checked={product.isInStock}/>
+        <input
+          {...register("isInStock", "checkbox")}
+          checked={product.isInStock}
+        />
 
         <label htmlFor="isSeveralSizes">is Several Sizes</label>
-        <input {...register("isSeveralSizes", "checkbox")} checked={product.isSeveralSizes}/>
+        <input
+          {...register("isSeveralSizes", "checkbox")}
+          checked={product.isSeveralSizes}
+        />
 
         <button>Save</button>
       </form>
