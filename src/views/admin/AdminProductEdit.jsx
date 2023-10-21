@@ -42,7 +42,7 @@ export function AdminProductEdit() {
   return (
     <section className="admin-product-edit">
       <h1>{product._id ? "Edit" : "Add"} Product</h1>
-      <form className="flex column" onSubmit={onSaveProduct}>
+      <form className="basic-form" onSubmit={onSaveProduct}>
         <label htmlFor="name">name</label>
         <input {...register("name", "text")} />
 

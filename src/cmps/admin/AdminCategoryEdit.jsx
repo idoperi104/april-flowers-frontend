@@ -1,21 +1,31 @@
 import { useNavigate, useParams } from "react-router-dom"
-import { useForm } from "../../customHooks/useForm"
 import { categoryService } from "../../services/category.service.local"
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import { useFormRegister } from "../../customHooks/useFormRegister"
-import { Value } from "sass"
+import { loadCategories } from "../../store/actions/category.actions"
+import { useDispatch } from "react-redux"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faXmark } from "@fortawesome/free-solid-svg-icons"
 
 export function AdminCategoryEdit() {
   const [register, category, handleChange, setCategory] = useFormRegister({
     ...categoryService.getEmptyCategory(),
   })
 
+  const dispatch = useDispatch()
+
   const params = useParams()
   const navigate = useNavigate()
-
+  const inputElement = useRef()
+  
   useEffect(() => {
     loadCategory()
-  }, [])
+    focusInput()
+  }, [params.id])
+
+  function focusInput() {
+    inputElement.current.focus()
+  }
 
   async function loadCategory() {
     const categoryId = params.id
@@ -26,6 +36,9 @@ export function AdminCategoryEdit() {
       } catch (error) {
         console.log("error:", error)
       }
+    } else {
+      const category = categoryService.getEmptyCategory()
+      setCategory(category)
     }
   }
 
@@ -33,22 +46,29 @@ export function AdminCategoryEdit() {
     ev.preventDefault()
     try {
       await categoryService.save({ ...category })
+      dispatch(loadCategories())
       navigate("/admin/categories")
     } catch (error) {
       console.log("error:", error)
     }
   }
 
-  const { name, subCategories } = category
+  function onClose() {
+    navigate("/admin/categories")
+  }
 
   return (
     <section className="admin-category-edit">
-      <h1>{category._id ? "Edit" : "Add"} Category</h1>
-      <form className="flex column" onSubmit={onSaveCategory}>
-        <label htmlFor="name">name</label>
-        <input {...register("name", "text")} />
+      <button className="btn btn-close" onClick={onClose}>
+        <FontAwesomeIcon icon={faXmark} />
+      </button>
+      <form className="basic-form" onSubmit={onSaveCategory}>
+        <label htmlFor="name">
+          שם הקטגוריה:
+        </label>
+        <input {...register("name", "text")} ref={inputElement} />
 
-        <button>Save</button>
+        <button>שמור</button>
       </form>
     </section>
   )

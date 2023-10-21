@@ -1,0 +1,18 @@
+.admin-category-edit {
+    background-color: $clr-1;
+    margin: 0 0 em(16px) em(16px);
+    padding: em(16px);
+    border-radius: em(10px);
+    max-width: em(480px);
+
+    display: flex;
+    flex-direction: column;
+
+    .btn-close {
+        margin: 0;
+        align-self: flex-end;
+    }
+
+}
+
+

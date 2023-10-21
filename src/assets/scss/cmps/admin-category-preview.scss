@@ -15,29 +15,10 @@
         .name {
             font-size: em(20px);
         }
-
-        .icon {}
     }
-
-    .sub-categories {
-        list-style-type: disc;
-        margin: em(8px) em(24px);
-
-    }
-
+    
     .actions {
         margin: em(16px) 0 0 0;
         height: em(28px);
-
-        .btn-remove {
-            height: 100%;
-            width: em(48px);
-            border-radius: em(10px);
-            border: none;
-
-            &:hover {
-                box-shadow: 0px 0px 3px 1px rgb(0, 0, 0, 0.3);
-            }
-        }
     }
 }

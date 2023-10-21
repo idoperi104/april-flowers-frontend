@@ -26,6 +26,7 @@ export function useFormRegister(initialFields, cb = () => {}) {
 
     setFields((prevFields) => ({ ...prevFields, [field]: value }))
   }
+
   // <input onChange={handleChange} value={filterBy.model} type="text" name="model" id="model" />
 
   function register(field, type = "text") {

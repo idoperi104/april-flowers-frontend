@@ -8,7 +8,7 @@ import { AdminDashboard } from "./views/admin/AdminDashboard"
 import { AdminProductIndex } from "./views/admin/AdminProductIndex"
 import { AdminProductEdit } from "./views/admin/AdminProductEdit"
 import { AdminCategoryIndex } from "./views/admin/AdminCategoryIndex"
-import { AdminCategoryEdit } from "./views/admin/AdminCategoryEdit"
+import { AdminCategoryEdit } from "./cmps/admin/AdminCategoryEdit"
 
 function App() {
   return (
@@ -23,8 +23,12 @@ function App() {
               <Route path="dashboard" element={<AdminDashboard />} />
               <Route path="products" element={<AdminProductIndex />} />
               <Route path="products/edit/:id?" element={<AdminProductEdit />} />
-              <Route path="categories" element={<AdminCategoryIndex />} />
-              <Route path="categories/edit/:id?" element={<AdminCategoryEdit />} />
+              <Route path="categories" element={<AdminCategoryIndex />}>
+                <Route
+                  path="edit/:id?"
+                  element={<AdminCategoryEdit />}
+                />
+              </Route>
               <Route path="orders" element={<AdminDashboard />} />
               <Route path="admins" element={<AdminDashboard />} />
               <Route path="shipping" element={<AdminDashboard />} />

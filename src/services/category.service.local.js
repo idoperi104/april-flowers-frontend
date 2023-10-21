@@ -48,7 +48,6 @@ async function save(category) {
 function getEmptyCategory() {
   return {
     name: "",
-    subCategories: [],
   }
 }
 

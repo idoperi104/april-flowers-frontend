@@ -31,7 +31,7 @@ export function AdminCategoryPreview({
           icon={isExpand ? faCaretUp : faCaretDown}
         />
       </div>
-      {isExpand ? (
+      {/* {isExpand ? (
         <ul className="sub-categories">
           {category.subCategories.map((subCategory, idx) => (
             <li key={idx} className="sub-category">
@@ -39,21 +39,28 @@ export function AdminCategoryPreview({
             </li>
           ))}
         </ul>
+      ) : null} */}
+      {isExpand ? (
+        <div className="actions">
+          <button
+            className="btn btn-remove"
+            onClick={(ev) => {
+              ev.stopPropagation()
+              onRemoveCategory(category._id)
+            }}
+          >
+            <FontAwesomeIcon icon={faTrashCan} />
+          </button>
+          <NavLink
+            className="btn-link"
+            to={`/admin/categories/edit/${category._id}`}
+          >
+            <button className="btn">
+              <FontAwesomeIcon icon={faPenToSquare} />
+            </button>
+          </NavLink>
+        </div>
       ) : null}
-      <div className="actions">
-        <button
-          className="btn-remove"
-          onClick={(ev) => {
-            ev.stopPropagation()
-            onRemoveCategory(category._id)
-          }}
-        >
-          <FontAwesomeIcon icon={faTrashCan} />
-        </button>
-        <NavLink to={`/admin/categories/edit/${category._id}`}>
-          <FontAwesomeIcon icon={faPenToSquare} />
-        </NavLink>
-      </div>
     </li>
   )
 }

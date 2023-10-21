@@ -8,7 +8,7 @@ import { useCallback, useEffect } from "react"
 import { AdminCategoryList } from "../../cmps/admin/AdminCategoryList.jsx"
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 // import { faImage, faPlus } from "@fortawesome/free-solid-svg-icons"
-import { Link } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus } from "@fortawesome/free-solid-svg-icons"
 
@@ -52,6 +52,8 @@ export function AdminCategoryIndex() {
           <span>הוספת קטגוריה חדשה</span>
         </button>
       </Link>
+
+      <Outlet />
 
       <h2 className="title">רשימת קטגוריות:</h2>
 
