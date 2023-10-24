@@ -68,7 +68,7 @@ export function AdminCategoryEdit() {
         </label>
         <input {...register("name", "text")} ref={inputElement} />
 
-        <button>שמור</button>
+        <button className="btn-submit" >שמור</button>
       </form>
     </section>
   )

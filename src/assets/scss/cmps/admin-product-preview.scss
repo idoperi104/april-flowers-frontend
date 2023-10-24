@@ -1,29 +1,30 @@
 .admin-product-preview {
     display: grid;
-    grid-template-columns: repeat(5, 2fr) 1fr;
+    grid-template-columns: repeat(6, 1fr);
     gap: 8px;
-    // background-color: aquamarine;
+    justify-items: center;
+    align-items: center;
+
     height: rem(104px);
     position: relative;
-    align-items: center;
     font-size: 18px;
 
-    .preview-img{
+
+    .preview-img {
         height: em(80px);
-        justify-self: center;
     }
 
-    .btn-in-stock{
+    .btn-in-stock {
         height: 45%;
         width: clamp(10px, 100%, 120px);
         font-size: 18px;
         border-radius: em(8px, 18px);
-        
-        &.green{
+
+        &.green {
             background-color: $clr-admin-preview-green;
         }
-    
-        &.red{
+
+        &.red {
             background-color: $clr-admin-preview-red;
         }
     }

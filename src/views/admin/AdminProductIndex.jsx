@@ -10,16 +10,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faImage, faPlus } from "@fortawesome/free-solid-svg-icons"
 import { Link, NavLink } from "react-router-dom"
 import { productService } from "../../services/product.service.local"
+import { setFilterBy } from "../../store/actions/product.actions"
+import { AdminProductFilter } from "../../cmps/admin/AdminProductFilter"
+import { loadCategories } from "../../store/actions/category.actions"
 
 export function AdminProductIndex() {
   const products = useSelector(
     (storeState) => storeState.productModule.products
+  )
+  const filterBy = useSelector(
+    (storeState) => storeState.productModule.filterBy
   )
 
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(loadProducts())
+    dispatch(loadCategories())
 
     return () => {}
   }, [])
@@ -40,6 +47,11 @@ export function AdminProductIndex() {
     }
   }
 
+  const onChangeFilter = (filterBy) => {
+    dispatch(setFilterBy(filterBy))
+    dispatch(loadProducts())
+  }
+
   if (!products) return <div>Loading...</div>
   return (
     <section className="admin-product-index">
@@ -51,6 +63,12 @@ export function AdminProductIndex() {
           <span>הוספת מוצר חדש</span>
         </button>
       </Link>
+
+      <AdminProductFilter
+        filterBy={filterBy}
+        onChangeFilter={onChangeFilter}
+      />
+
 
       <div className="admin-product-table">
         <div className="table-header">

@@ -9,11 +9,7 @@ import React, { useEffect, useRef, useState } from "react"
 import { NavLink } from "react-router-dom"
 // import { Link } from "react-router-dom"
 
-export function AdminCategoryPreview({
-  category,
-  onRemoveCategory,
-  onUpdateCategoryKeyVal,
-}) {
+export function AdminCategoryPreview({ category, onRemoveCategory }) {
   const [isExpand, setIsExpand] = useState(false)
 
   //   useEffect(() => {}, [isExpand])

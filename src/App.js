@@ -18,16 +18,14 @@ function App() {
         <main className="container">
           <Routes>
             <Route path="/" element={<ProductIndex />} />
+            <Route path="/product" element={<ProductIndex />} />
 
             <Route path="/admin" element={<AdminPage />}>
               <Route path="dashboard" element={<AdminDashboard />} />
               <Route path="products" element={<AdminProductIndex />} />
               <Route path="products/edit/:id?" element={<AdminProductEdit />} />
               <Route path="categories" element={<AdminCategoryIndex />}>
-                <Route
-                  path="edit/:id?"
-                  element={<AdminCategoryEdit />}
-                />
+                <Route path="edit/:id?" element={<AdminCategoryEdit />} />
               </Route>
               <Route path="orders" element={<AdminDashboard />} />
               <Route path="admins" element={<AdminDashboard />} />

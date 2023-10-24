@@ -3,48 +3,27 @@
     "_id": "dwe333",
     "name": "זר סגול לבן",
     "desc": "פרחי אפריל יצאה בקולקציית זרים מפתיעים ומדליקים המכילים פרחים באיכות גבוהה, זרי הפרחים נשלחים במשלוח פרחים ברכב ממוזג השומר על טריות הפרחים.",
-    "imgUrls": [
-      "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg",
-      "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg",
-      "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg",
-      "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg"
-    ],
+    "imgUrl": "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg",
     "category": "זרי פרחים",
-    "isSeveralSizes": false,
-    "price": 145,
-    "prices": [],
+    "price": 133,
     "isInStock": true
   },
   {
     "_id": "dwe332",
     "name": "זר סגול לבן",
     "desc": "פרחי אפריל יצאה בקולקציית זרים מפתיעים ומדליקים המכילים פרחים באיכות גבוהה, זרי הפרחים נשלחים במשלוח פרחים ברכב ממוזג השומר על טריות הפרחים.",
-    "imgUrls": [
-      "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg",
-      "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg",
-      "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg",
-      "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg"
-    ],
+    "imgUrl": "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg",
     "category": "זרי פרחים",
-    "isSeveralSizes": false,
     "price": 145,
-    "prices": [],
     "isInStock": true
   },
   {
-    "_id": "d2e332",
+    "_id": "dwe331",
     "name": "זר סגול לבן",
     "desc": "פרחי אפריל יצאה בקולקציית זרים מפתיעים ומדליקים המכילים פרחים באיכות גבוהה, זרי הפרחים נשלחים במשלוח פרחים ברכב ממוזג השומר על טריות הפרחים.",
-    "imgUrls": [
-      "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg",
-      "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg",
-      "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg",
-      "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg"
-    ],
+    "imgUrl": "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg",
     "category": "זרי פרחים",
-    "isSeveralSizes": false,
-    "price": 145,
-    "prices": [],
-    "isInStock": false
+    "price": 153,
+    "isInStock": true
   }
 ]

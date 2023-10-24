@@ -9,7 +9,8 @@
 
     .table-header {
         display: grid;
-        grid-template-columns: repeat(5, 2fr) 1fr;
+        grid-template-columns: repeat(6, 1fr);
+
         height: em(72px);
         position: relative;
         align-items: center;
@@ -27,10 +28,7 @@
 
         .item {
             font-weight: 600;
-
-            &:first-child {
-                justify-self: center;
-            }
+            justify-self: center;
         }
     }
 }

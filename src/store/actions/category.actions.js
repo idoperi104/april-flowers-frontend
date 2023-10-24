@@ -9,7 +9,9 @@ import {
 export function loadCategories() {
   return async (dispatch, getState) => {
     try {
-      const categories = await categoryService.query()
+      const categories = await categoryService.query(
+        getState().categoryModule.filterBy
+      )
       const action = {
         type: SET_CATEGORIES,
         categories,

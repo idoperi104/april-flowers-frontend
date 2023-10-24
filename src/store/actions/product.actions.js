@@ -9,7 +9,7 @@ import {
 export function loadProducts() {
   return async (dispatch, getState) => {
     try {
-      const products = await productService.query()
+      const products = await productService.query(getState().productModule.filterBy)
       const action = {
         type: SET_PRODUCTS,
         products,

@@ -11,6 +11,8 @@ const INITIAL_STATE = {
   userProducts: null,
   filterBy: {
     name: "",
+    category: "",
+    stock: "",
   },
 }
 

@@ -1,0 +1,17 @@
+.admin-product-filter {
+    display: flex;
+    align-items: center;
+
+    label {
+        font-size: 18px;
+        margin: 0 em(24px, 18px) 0 em(8px, 18px);
+    }
+
+    select {
+        height: em(40px);
+        border: 1px solid $clr-6;
+        border-radius: em(4px);
+        padding: em(8px);
+        font-size: em(16px);
+    }
+}

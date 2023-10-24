@@ -2,19 +2,22 @@ import { useDispatch, useSelector } from "react-redux"
 import {
   loadCategories,
   removeCategory,
-  updateCategoryKeyVal,
+  setFilterBy,
 } from "../../store/actions/category.actions"
 import { useCallback, useEffect } from "react"
 import { AdminCategoryList } from "../../cmps/admin/AdminCategoryList.jsx"
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-// import { faImage, faPlus } from "@fortawesome/free-solid-svg-icons"
 import { Link, Outlet } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus } from "@fortawesome/free-solid-svg-icons"
+import { AdminCategoryFilter } from "../../cmps/admin/AdminCategoryFilter"
+
 
 export function AdminCategoryIndex() {
   const categories = useSelector(
     (storeState) => storeState.categoryModule.categories
+  )
+  const filterBy = useSelector(
+    (storeState) => storeState.categoryModule.filterBy
   )
 
   const dispatch = useDispatch()
@@ -33,12 +36,9 @@ export function AdminCategoryIndex() {
     }
   }, [])
 
-  async function onUpdateCategoryKeyVal(category, key, val) {
-    try {
-      dispatch(updateCategoryKeyVal(category, key, val))
-    } catch (error) {
-      console.log("error:", error)
-    }
+  const onChangeFilter = (filterBy) => {
+    dispatch(setFilterBy(filterBy))
+    dispatch(loadCategories())
   }
 
   if (!categories) return <div>Loading...</div>
@@ -57,9 +57,13 @@ export function AdminCategoryIndex() {
 
       <h2 className="title">רשימת קטגוריות:</h2>
 
+      <AdminCategoryFilter
+        filterBy={filterBy}
+        onChangeFilter={onChangeFilter}
+      />
+
       <AdminCategoryList
         categories={categories}
-        onUpdateCategoryKeyVal={onUpdateCategoryKeyVal}
         onRemoveCategory={onRemoveCategory}
       />
     </section>

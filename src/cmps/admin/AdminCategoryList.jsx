@@ -1,7 +1,7 @@
 import { memo } from "react"
 import { AdminCategoryPreview } from "./AdminCategoryPreview.jsx"
 
-function _AdminCategoryList({ categories, onRemoveCategory, onUpdateCategoryKeyVal }) {
+function _AdminCategoryList({ categories, onRemoveCategory }) {
   return (
     <ul className="admin-category-list">
       {categories.map((category) => (
@@ -9,7 +9,6 @@ function _AdminCategoryList({ categories, onRemoveCategory, onUpdateCategoryKeyV
           key={category._id}
           category={category}
           onRemoveCategory={onRemoveCategory}
-          onUpdateCategoryKeyVal={onUpdateCategoryKeyVal}
         />
       ))}
     </ul>

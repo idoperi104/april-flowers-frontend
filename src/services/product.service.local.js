@@ -13,17 +13,44 @@ export const productService = {
 }
 window.rs = productService
 
-async function query(filterBy = { name: "" }) {
-
+async function query(filterBy = { name: "", category: "", stock: "" }) {
   var products = await storageService.query(STORAGE_KEY)
   if (!products || products.length === 0) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
     products = data
   }
-  // if (filterBy.title) {
-  //   const regex = new RegExp(filterBy.title, "i")
-  //   products = products.filter((product) => regex.test(product.title))
-  // }
+
+  if (filterBy.name) {
+    const regex = new RegExp(filterBy.name, "i")
+    products = products.filter((product) => regex.test(product.name))
+  }
+
+  if (filterBy.category) {
+    products = products.filter(
+      (product) => product.category === filterBy.category
+    )
+  }
+
+  if (filterBy.stock) {
+    switch (filterBy.stock) {
+      case "inStock":
+        products = products.filter((product) => product.isInStock === true)
+        break
+      case "outOfStock":
+        products = products.filter((product) => product.isInStock === false)
+        break
+      default:
+        break
+    }
+  }
+
+  products = products.sort((a, b) => {
+    const nameA = a.name.toUpperCase()
+    const nameB = b.name.toUpperCase()
+    if (nameA < nameB) return -1
+    if (nameA > nameB) return 1
+    return 0
+  })
 
   return products
 }
@@ -55,7 +82,7 @@ function getEmptyProduct() {
     isSeveralSizes: false,
     price: 0,
     prices: [],
-    isInStock: true
+    isInStock: true,
   }
 }
 

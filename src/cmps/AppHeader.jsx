@@ -24,10 +24,10 @@ export function AppHeader() {
       </section>
 
       <nav className="nav-container">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/categories">Categories</NavLink>
-        <NavLink to="/product">All Products</NavLink>
-        <NavLink to="/admin/products">AdminPage</NavLink>
+        {/* <NavLink to="/">Home</NavLink> */}
+        <NavLink to="/categories">לכל הקטגוריות</NavLink>
+        <NavLink to="/product">לכל המוצרים</NavLink>
+        <NavLink to="/admin/products">עמוד מנהל</NavLink>
       </nav>
 
       <h1 onClick={onLogoClicked} className="logo">

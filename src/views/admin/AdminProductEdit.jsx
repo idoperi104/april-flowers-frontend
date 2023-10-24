@@ -1,20 +1,31 @@
 import { useNavigate, useParams } from "react-router-dom"
-import { useForm } from "../../customHooks/useForm"
 import { productService } from "../../services/product.service.local"
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import { useFormRegister } from "../../customHooks/useFormRegister"
-import { Value } from "sass"
+import { useDispatch, useSelector } from "react-redux"
+import { loadCategories } from "../../store/actions/category.actions"
+import { uploadService } from "../../services/upload.service"
+import dragImg from "../../assets/imgs/drag.png"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faXmark } from "@fortawesome/free-solid-svg-icons"
 
 export function AdminProductEdit() {
   const [register, product, handleChange, setProduct] = useFormRegister({
     ...productService.getEmptyProduct(),
   })
 
+  const categories = useSelector(
+    (storeState) => storeState.categoryModule.categories
+  )
+
   const params = useParams()
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const fileInputRef = useRef(null)
 
   useEffect(() => {
     loadProduct()
+    dispatch(loadCategories())
   }, [])
 
   async function loadProduct() {
@@ -39,35 +50,71 @@ export function AdminProductEdit() {
     }
   }
 
+  async function handleFile({ target }) {
+    const imgUrl = await uploadService.uploadImg(target.files[0])
+    setProduct({ ...product, imgUrl })
+  }
+
+  function onClose() {
+    navigate("/admin/products")
+  }
+
+  const { imgUrl } = product
+
   return (
     <section className="admin-product-edit">
-      <h1>{product._id ? "Edit" : "Add"} Product</h1>
+      <button className="btn btn-close" onClick={onClose}>
+        <FontAwesomeIcon icon={faXmark} />
+      </button>
       <form className="basic-form" onSubmit={onSaveProduct}>
-        <label htmlFor="name">name</label>
+        <label htmlFor="name">שם המוצר:</label>
         <input {...register("name", "text")} />
 
-        <label htmlFor="desc">desc</label>
-        <input {...register("desc", "text")} />
+        <label htmlFor="imgUrl">תמונה:</label>
+        <button
+          className="btn-img-uploader"
+          type="button"
+          onClick={() => fileInputRef.current.click()}
+        >
+          Upload an image
+        </button>
+        <div className="img-uploader">
+          <img src={imgUrl || dragImg} alt="" />
+          <input
+            className="input-img"
+            onChange={handleFile}
+            ref={fileInputRef}
+            accept="image/*"
+            type="file"
+          />
+        </div>
 
-        <label htmlFor="category">category</label>
-        <input {...register("category", "text")} />
+        {/* <label htmlFor="desc">תיאור:</label>
+        <input {...register("desc", "text")} /> */}
 
-        <label htmlFor="price">price</label>
+        <label htmlFor="desc">תיאור:</label>
+        <textarea {...register("desc", "text")}></textarea>
+
+        <label htmlFor="category">קטגוריה:</label>
+        <select {...register("category", "text")}>
+          {categories?.map((category) => (
+            <option key={category._id} value={category.name}>
+              {category.name}
+            </option>
+          ))}
+        </select>
+
+        <label htmlFor="price">מחיר:</label>
         <input {...register("price", "number")} />
 
-        <label htmlFor="isInStock">is In Stock</label>
+        <label htmlFor="isInStock">קיים במלאי?</label>
         <input
+          className="input-checkbox"
           {...register("isInStock", "checkbox")}
           checked={product.isInStock}
         />
 
-        <label htmlFor="isSeveralSizes">is Several Sizes</label>
-        <input
-          {...register("isSeveralSizes", "checkbox")}
-          checked={product.isSeveralSizes}
-        />
-
-        <button>Save</button>
+        <button className="btn-submit">Save</button>
       </form>
     </section>
   )
