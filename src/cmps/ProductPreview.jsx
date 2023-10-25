@@ -1,4 +1,4 @@
-import { faBagShopping } from "@fortawesome/free-solid-svg-icons"
+import { faBagShopping, faBasketShopping, faCartPlus } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "react-router-dom"
 
@@ -15,7 +15,7 @@ export function ProductPreview({ product }) {
   return (
     <li className="product-preview">
       <button className="btn-bag" onClick={onBagClicked}>
-        <FontAwesomeIcon icon={faBagShopping} />
+        <FontAwesomeIcon icon={faCartPlus} />
       </button>
       {getInStock() ? null : (
         <Link to={`product/${product._id}`}>

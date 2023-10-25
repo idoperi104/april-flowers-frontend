@@ -9,6 +9,7 @@ import { AdminProductIndex } from "./views/admin/AdminProductIndex"
 import { AdminProductEdit } from "./views/admin/AdminProductEdit"
 import { AdminCategoryIndex } from "./views/admin/AdminCategoryIndex"
 import { AdminCategoryEdit } from "./cmps/admin/AdminCategoryEdit"
+import { ProductDetails } from "./views/ProductDetails"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<ProductIndex />} />
             <Route path="/product" element={<ProductIndex />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
 
             <Route path="/admin" element={<AdminPage />}>
               <Route path="dashboard" element={<AdminDashboard />} />
