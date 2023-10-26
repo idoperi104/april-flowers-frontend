@@ -1,5 +1,9 @@
-// Colors
+:root {
+    --app-header-height: 74px;
+}
 
+
+// Colors
 $clr-1: #ffffff;
 $clr-2: #e8e8e8;
 // $clr-3: #b7b7b7;
@@ -19,19 +23,11 @@ $clr-admin-preview-green: #8fce00;
 // product preview
 $clr-product-preview-blue: #346796;
 
-
 // cover
 $clr-cover-1: #e8e8e86f;
 
-
-// $clr-1: #ffffff;
-// $clr-2: #f8f9fa;
-// $clr-3: #e9ecef;
-// $clr-4: #dee2e6;
-// $clr-5: #ced4da;
-// $clr-6: #adb5bd;
-// $clr-7: #6c757d;
-// $clr-8: #495057;
-// $clr-9: #343a40;
-// $clr-10: #212529;
-// $clr-11: #000000;
+// cart
+$cart-bgc: #F6F6F6;
+$border-clr: #d6d6d6;
+$border-clr-2: #dedede;
+$cart-cover-bgc: #00000080;

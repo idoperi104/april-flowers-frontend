@@ -12,6 +12,7 @@ const INITIAL_STATE = {
   filterBy: {
     name: "",
   },
+  watchedCategory: null
 }
 
 export function categoryReducer(state = INITIAL_STATE, action = {}) {

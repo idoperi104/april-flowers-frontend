@@ -1,10 +1,14 @@
 .app-header {
     background-color: $clr-1;
-    height: em(74px);
+    height: var(--app-header-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-inline: em(64px);
+
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .logo {
@@ -28,24 +32,35 @@
     height: 100%;
     align-items: center;
 
-    .btn-search {
+    .btn-search,
+    .btn-cart {
         background-color: transparent;
         border: none;
         font-size: em(16px);
-
-        // &:hover{
-        //     scale: 1.3;
-        //     transition: all .1s;
-        // }
     }
 
     .btn-cart {
-        height: em(40px);
-        display: flex;
-        align-items: center;
-        // &:hover{
-        //     scale: 1.3;
-        //     transition: all .1s;
-        // }
+        position: relative;
+
+        .num-of-items {
+            position: absolute;
+            top: 0;
+            transform: translate(50%, -50%);
+
+            background-color: $clr-product-preview-blue;
+            color: $clr-1;
+            height: em(14px);
+            width: em(14px);
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                color: $clr-1;
+                font-size: 12px;
+            }
+        }
     }
 }

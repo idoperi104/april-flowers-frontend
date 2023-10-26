@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
 import { productService } from "../services/product.service.local"
 import { loadCategories } from "../store/actions/category.actions"
+import { addCartItem, setIsCartOpen, toggleIsOpen } from "../store/actions/cart.actions"
 
 export function ProductDetails() {
   const [product, setProduct] = useState(null)
@@ -13,8 +14,7 @@ export function ProductDetails() {
 
   useEffect(() => {
     loadProduct()
-    dispatch(loadCategories())
-  }, [])
+  }, [params.id])
 
   async function loadProduct() {
     const productId = params.id
@@ -28,9 +28,22 @@ export function ProductDetails() {
     }
   }
 
+  function onAddToCart() {
+    if (!product.isInStock) return
+    dispatch(addCartItem(product))
+    dispatch(toggleIsOpen())
+  }
+
+  function getBtnTxt() {
+    return product.isInStock ? "הוספה לסל" : "אזל המלאי"
+  }
+
+  function getIsOutOfSockClass() {
+    return product.isInStock ? "" : "out-of-stock"
+  }
+
   return product ? (
     <section className="product-details">
-      {/* <div className="details"> */}
       <div className="info">
         <h2 className="name">{product.name}</h2>
         <h3 className="category">{product.category}</h3>
@@ -38,9 +51,10 @@ export function ProductDetails() {
       </div>
       <div className="actions">
         <h2 className="price">{product.price} ₪</h2>
-        <button className="btn-add-to-cart">הוספה לסל</button>
+        <button className={`btn-add-to-cart ${getIsOutOfSockClass()}`} onClick={onAddToCart}>
+          {getBtnTxt()}
+        </button>
       </div>
-      {/* </div> */}
 
       <div className="img-container">
         <img className="img main-img" src={product.imgUrl} alt="" />

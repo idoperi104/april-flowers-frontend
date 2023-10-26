@@ -1,29 +1,38 @@
 [
   {
     "_id": "dwe333",
-    "name": "זר סגול לבן",
+    "name": "זר אדום לבן",
     "desc": "פרחי אפריל יצאה בקולקציית זרים מפתיעים ומדליקים המכילים פרחים באיכות גבוהה, זרי הפרחים נשלחים במשלוח פרחים ברכב ממוזג השומר על טריות הפרחים.",
     "imgUrl": "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg",
     "category": "זרי פרחים",
-    "price": 133,
+    "price": 100,
     "isInStock": true
   },
   {
     "_id": "dwe332",
-    "name": "זר סגול לבן",
+    "name": "זר ורוד לבן",
     "desc": "פרחי אפריל יצאה בקולקציית זרים מפתיעים ומדליקים המכילים פרחים באיכות גבוהה, זרי הפרחים נשלחים במשלוח פרחים ברכב ממוזג השומר על טריות הפרחים.",
-    "imgUrl": "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg",
+    "imgUrl": "https://april-flowers.co.il/wp-content/uploads/2022/07/זר-ורוד-סגול-לבן.jpeg",
     "category": "זרי פרחים",
-    "price": 145,
+    "price": 150,
     "isInStock": true
   },
   {
     "_id": "dwe331",
     "name": "זר סגול לבן",
     "desc": "פרחי אפריל יצאה בקולקציית זרים מפתיעים ומדליקים המכילים פרחים באיכות גבוהה, זרי הפרחים נשלחים במשלוח פרחים ברכב ממוזג השומר על טריות הפרחים.",
-    "imgUrl": "https://april-flowers.co.il/wp-content/uploads/2022/05/%D7%90%D7%93%D7%95%D7%9D-%D7%91%D7%9C%D7%91-11.jpeg",
+    "imgUrl": "https://april-flowers.co.il/wp-content/uploads/2022/05/זר-סגול-לבן.jpeg",
     "category": "זרי פרחים",
-    "price": 153,
+    "price": 120,
     "isInStock": true
+  },
+  {
+    "_id": "a2e331",
+    "name": "בלון סגול",
+    "desc": "פרחי אפריל יצאה בקולקציית זרים מפתיעים ומדליקים המכילים פרחים באיכות גבוהה, זרי הפרחים נשלחים במשלוח פרחים ברכב ממוזג השומר על טריות הפרחים.",
+    "imgUrl": "https://april-flowers.co.il/wp-content/uploads/2022/08/WhatsApp-Image-2022-07-27-at-18.29.04-300x300.jpeg",
+    "category": "בלונים",
+    "price": 5,
+    "isInStock": false
   }
 ]

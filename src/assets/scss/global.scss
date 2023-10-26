@@ -11,19 +11,29 @@
 @import "basics/layout";
 
 // Views
-@import "views/product-index";
 @import "views/product-details";
+@import "views/collection-page";
+@import "views/category-page";
+
+// Components
+@import "cmps/app-header";
+@import "cmps/product-list";
+@import "cmps/product-preview";
+
+// Components-cart
+@import "cmps/cart-index";
+@import "cmps/cart-preview";
+
+// Components-category
+@import "cmps/category-list";
+@import "cmps/category-preview";
+
 
 // Views-admin
 @import "views/admin-page";
 @import "views/admin-product-index";
 @import "views/admin-product-edit";
 @import "views/admin-category-index";
-
-// Components
-@import "cmps/app-header";
-@import "cmps/product-list";
-@import "cmps/product-preview";
 
 // Components-admin
 @import "cmps/admin-side-bar";
@@ -33,4 +43,6 @@
 @import "cmps/admin-category-list";
 @import "cmps/admin-category-preview";
 @import "cmps/admin-category-edit";
+
+
 

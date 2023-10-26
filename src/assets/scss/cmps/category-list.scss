@@ -1,0 +1,7 @@
+.category-list{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: em(20px);
+    row-gap: em(30px);
+    margin: em(30px) 0 em(20px) 0;
+}

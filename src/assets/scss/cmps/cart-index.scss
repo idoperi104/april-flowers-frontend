@@ -1,0 +1,116 @@
+.cart-index {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: calc(100vh - var(--app-header-height));
+    scroll-behavior: none;
+
+    position: fixed;
+    // top: 0;
+    
+    .cover{
+        transition: all 200ms;
+        background-color: $cart-cover-bgc;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .container {
+        transition: all 400ms ease-out;
+        // transition: all .4 ease;
+        height: calc(100vh - var(--app-header-height) - 30px);
+        background-color: $cart-bgc;
+        max-width: 500px;
+        width: 100%;
+        margin: em(15px) em(30px);
+        border-radius: 5px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        position: absolute;
+        top: 0;
+
+        display: grid;
+        grid-template-rows: max-content 1fr max-content;
+
+        .top-container {
+            padding: em(30px) em(40px) em(20px) em(40px);
+            justify-content: space-between;
+            align-items: center;
+            height: em(90px);
+
+
+            .title {
+                font-size: em(25px);
+                font-weight: 600;
+            }
+
+            .btn-close {
+                background-color: transparent;
+                border: none;
+                font-size: em(29px);
+                height: em(40px, 29px);
+                width: em(40px, 29px);
+            }
+        }
+
+        .cart-list {
+            padding: 0 em(30px);
+            overflow-y: scroll;
+        }
+
+        .bottom-container {
+            padding: em(30px) em(40px) em(30px) em(40px);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: em(20px);
+            align-items: center;
+            border-top: 1px solid $border-clr;
+
+            .title {
+                font-size: em(22px);
+                font-weight: 600;
+            }
+
+            .price {
+                font-size: em(22px);
+                font-weight: 600;
+
+                justify-self: flex-end;
+            }
+
+            .btn-checkout {
+                grid-column: 1 / -1;
+                width: 100%;
+                font-size: em(16px);
+                padding: em(16px);
+                color: $clr-1;
+                background-color: $clr-6;
+                border-radius: em(3px);
+                font-weight: 600;
+                border: none;
+            }
+
+        }
+    }
+
+
+    
+    
+    &.close {
+        transition: transform;
+        transition-delay: 400ms;
+        transform: translate(100%);
+        
+        .cover{
+            opacity: 0;
+        }
+        
+        .container{
+            transform: translate(150%);
+            *{
+                width: 0;
+            }
+        }
+    }
+
+}

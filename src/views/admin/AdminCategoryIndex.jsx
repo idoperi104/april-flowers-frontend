@@ -10,6 +10,7 @@ import { Link, Outlet } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus } from "@fortawesome/free-solid-svg-icons"
 import { AdminCategoryFilter } from "../../cmps/admin/AdminCategoryFilter"
+import { categoryService } from "../../services/category.service.local"
 
 
 export function AdminCategoryIndex() {
@@ -25,7 +26,9 @@ export function AdminCategoryIndex() {
   useEffect(() => {
     dispatch(loadCategories())
 
-    return () => {}
+    return () => {
+      dispatch(setFilterBy(categoryService.getEmptyFilterBy()))
+    }
   }, [])
 
   const onRemoveCategory = useCallback(async (categoryId) => {

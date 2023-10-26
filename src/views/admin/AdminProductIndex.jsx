@@ -28,7 +28,9 @@ export function AdminProductIndex() {
     dispatch(loadProducts())
     dispatch(loadCategories())
 
-    return () => {}
+    return () => {
+      dispatch(setFilterBy(productService.getEmptyFilterBy()))
+    }
   }, [])
 
   const onRemoveProduct = useCallback(async (productId) => {
@@ -64,11 +66,7 @@ export function AdminProductIndex() {
         </button>
       </Link>
 
-      <AdminProductFilter
-        filterBy={filterBy}
-        onChangeFilter={onChangeFilter}
-      />
-
+      <AdminProductFilter filterBy={filterBy} onChangeFilter={onChangeFilter} />
 
       <div className="admin-product-table">
         <div className="table-header">

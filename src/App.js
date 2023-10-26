@@ -10,17 +10,40 @@ import { AdminProductEdit } from "./views/admin/AdminProductEdit"
 import { AdminCategoryIndex } from "./views/admin/AdminCategoryIndex"
 import { AdminCategoryEdit } from "./cmps/admin/AdminCategoryEdit"
 import { ProductDetails } from "./views/ProductDetails"
+import { CartIndex } from "./cmps/CartIndex"
+import { CollectionPage } from "./views/CollectionPage"
+import { CategoryPage } from "./views/CategoryPage.jsx"
+import { useDispatch } from "react-redux"
+import { loadCategories } from "./store/actions/category.actions"
+import { useEffect } from "react"
+import { loadProducts } from "./store/actions/product.actions"
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(loadCategories())
+    dispatch(loadProducts())
+    return () => {
+    }
+  }, [])
+  
+
   return (
     <Router>
       <section className="main-app">
         <AppHeader />
+        <CartIndex />
+
         <main className="container">
           <Routes>
             <Route path="/" element={<ProductIndex />} />
+
             <Route path="/product" element={<ProductIndex />} />
             <Route path="/product/:id" element={<ProductDetails />} />
+
+            <Route path="/collection" element={<CollectionPage />} />
+            <Route path="/collection/:id" element={<CategoryPage />} />
 
             <Route path="/admin" element={<AdminPage />}>
               <Route path="dashboard" element={<AdminDashboard />} />
@@ -35,6 +58,7 @@ function App() {
             </Route>
           </Routes>
         </main>
+
       </section>
     </Router>
   )
