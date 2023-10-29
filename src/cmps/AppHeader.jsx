@@ -45,13 +45,16 @@ export function AppHeader() {
         {/* <NavLink to="/cart" className="btn-cart">
           <FontAwesomeIcon icon={faCartShopping} />
         </NavLink> */}
+        <NavLink onClick={onNavigate} to="/admin/products">עמוד מנהל</NavLink>
       </section>
 
       <nav className="nav-container">
         {/* <NavLink to="/">Home</NavLink> */}
         <NavLink onClick={onNavigate} to="/collection">לכל הקטגוריות</NavLink>
-        <NavLink onClick={onNavigate} to="/product">לכל המוצרים</NavLink>
-        <NavLink onClick={onNavigate} to="/admin/products">עמוד מנהל</NavLink>
+        {/* <NavLink onClick={onNavigate} to="/product">לכל המוצרים</NavLink> */}
+        <NavLink onClick={onNavigate} to="/collection/זרי פרחים">זרי פרחים</NavLink>
+        <NavLink onClick={onNavigate} to="/collection/מארזי פרחים">מארזי פרחים</NavLink>
+        {/* <NavLink onClick={onNavigate} to="/product">מארזי פרחים</NavLink> */}
       </nav>
 
       <h1 onClick={onLogoClicked} className="logo">

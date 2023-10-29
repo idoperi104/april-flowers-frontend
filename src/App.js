@@ -43,7 +43,7 @@ function App() {
             <Route path="/product/:id" element={<ProductDetails />} />
 
             <Route path="/collection" element={<CollectionPage />} />
-            <Route path="/collection/:id" element={<CategoryPage />} />
+            <Route path="/collection/:name" element={<CategoryPage />} />
 
             <Route path="/admin" element={<AdminPage />}>
               <Route path="dashboard" element={<AdminDashboard />} />

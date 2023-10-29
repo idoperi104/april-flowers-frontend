@@ -23,18 +23,18 @@ export function CategoryPage() {
     return () => {
       dispatch(setFilterBy(productService.getEmptyFilterBy()))
     }
-  }, [categories])
+  }, [categories, params.name])
 
   useEffectUpdate(() => {
     dispatch(setFilterBy({ category: category.name }))
   }, [category])
 
   async function loadCategory() {
-    const categoryId = params.id
-    if (categoryId && categories.length) {
+    const categoryName = params.name
+    if (categoryName && categories.length) {
       try {
         const category = categories?.find(
-          (category) => category._id === categoryId
+          (category) => category.name === categoryName
         )
         setCategory(category)
       } catch (error) {
