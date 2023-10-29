@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { ProductIndex } from "./ProductIndex"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import { categoryService } from "../services/category.service.local"
 import { setFilterBy } from "../store/actions/product.actions"
@@ -9,6 +9,10 @@ import { productService } from "../services/product.service.local"
 
 export function CategoryPage() {
   const [category, setCategory] = useState(null)
+
+  const categories = useSelector(
+    (storeState) => storeState.categoryModule.categories
+  )
 
   const params = useParams()
   const dispatch = useDispatch()
@@ -19,7 +23,7 @@ export function CategoryPage() {
     return () => {
       dispatch(setFilterBy(productService.getEmptyFilterBy()))
     }
-  }, [])
+  }, [categories])
 
   useEffectUpdate(() => {
     dispatch(setFilterBy({ category: category.name }))
@@ -27,9 +31,11 @@ export function CategoryPage() {
 
   async function loadCategory() {
     const categoryId = params.id
-    if (categoryId) {
+    if (categoryId && categories.length) {
       try {
-        const category = await categoryService.getById(categoryId)
+        const category = categories?.find(
+          (category) => category._id === categoryId
+        )
         setCategory(category)
       } catch (error) {
         console.log("error:", error)
@@ -37,9 +43,18 @@ export function CategoryPage() {
     }
   }
 
+  function getStyle() {
+    return {
+      backgroundImage: `url("${category.themeImgUrl}")`,
+    }
+  }
+
   return category ? (
     <section className="category-page main-layout">
-      <h2 className="title">{category.name}</h2>
+      <div className="theme-header full" style={getStyle()}>
+        <div className="cover"></div>
+        <h2 className="title">{category.name}</h2>
+      </div>
       <ProductIndex />
     </section>
   ) : (

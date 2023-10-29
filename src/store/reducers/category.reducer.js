@@ -2,17 +2,16 @@ export const SET_CATEGORIES = "SET_CATEGORIES"
 export const ADD_CATEGORY = "ADD_CATEGORY"
 export const REMOVE_CATEGORY = "REMOVE_CATEGORY"
 export const UPDATE_CATEGORY = "UPDATE_CATEGORY"
-export const SET_FILTER_BY = "SET_FILTER_BY"
+export const SET_CATEGORY_FILTER_BY = "SET_CATEGORY_FILTER_BY"
 export const SET_USER_CATEGORIES = "SET_USER_CATEGORIES"
 export const REMOVE_USER_CATEGORY = "REMOVE_USER_CATEGORY"
 
 const INITIAL_STATE = {
-  categories: null,
-  userCategories: null,
-  filterBy: {
+  categories: [],
+  categoryFilterBy: {
     name: "",
   },
-  watchedCategory: null
+  watchedCategory: null,
 }
 
 export function categoryReducer(state = INITIAL_STATE, action = {}) {
@@ -41,10 +40,10 @@ export function categoryReducer(state = INITIAL_STATE, action = {}) {
           category._id === action.category._id ? action.category : category
         ),
       }
-    case SET_FILTER_BY:
+    case SET_CATEGORY_FILTER_BY:
       return {
         ...state,
-        filterBy: { ...action.filterBy },
+        categoryFilterBy: { ...action.categoryFilterBy },
       }
 
     default:

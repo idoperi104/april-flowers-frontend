@@ -2,15 +2,16 @@ import { categoryService } from "../../services/category.service.local"
 import {
   REMOVE_CATEGORY,
   SET_CATEGORIES,
-  SET_FILTER_BY,
+  SET_CATEGORY_FILTER_BY,
   UPDATE_CATEGORY,
+  ADD_CATEGORY,
 } from "../reducers/category.reducer"
 
 export function loadCategories() {
   return async (dispatch, getState) => {
     try {
       const categories = await categoryService.query(
-        getState().categoryModule.filterBy
+        getState().categoryModule.categoryFilterBy
       )
       const action = {
         type: SET_CATEGORIES,
@@ -36,6 +37,26 @@ export function removeCategory(categoryId) {
   }
 }
 
+export function saveCategory(category) {
+  console.log("category: ", category)
+  return async (dispatch) => {
+    try {
+      const savedCategory = await categoryService.save({ ...category })
+
+      var action
+      if (category._id)
+        action = { type: UPDATE_CATEGORY, category: savedCategory }
+      else action = { type: ADD_CATEGORY, category: savedCategory }
+
+      console.log("action: ", action)
+      dispatch(action)
+      return "saved!"
+    } catch (error) {
+      console.log("error:", error)
+    }
+  }
+}
+
 export function updateCategoryKeyVal(category, key, val) {
   return async (dispatch) => {
     try {
@@ -51,8 +72,8 @@ export function updateCategoryKeyVal(category, key, val) {
 
 // Filter by:
 
-export function setFilterBy(filterBy) {
+export function setCategoryFilterBy(categoryFilterBy) {
   return (dispatch) => {
-    dispatch({ type: SET_FILTER_BY, filterBy })
+    dispatch({ type: SET_CATEGORY_FILTER_BY, categoryFilterBy })
   }
 }

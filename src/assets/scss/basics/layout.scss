@@ -6,18 +6,18 @@
 }
 
 .main-layout {
-    max-width: 1560px;
-    margin: auto;
+    // max-width: 1560px;
+    // margin: auto;
 
-    // display: grid;
-    // grid-template-columns: 1fr 1560px 1fr;
-    // &>* {
-    //     grid-column: 2;
-    // }
+    display: grid;
+    grid-template-columns: 1fr 1560px 1fr;
+    &>* {
+        grid-column: 2;
+    }
 
-    // &>.full {
-    //     grid-column: 1 / -1;
-    // }
+    &>.full {
+        grid-column: 1 / -1;
+    }
 
     // @include mq(medium) {
     //     grid-template-columns: 16px 1fr 16px;

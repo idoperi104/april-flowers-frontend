@@ -19,7 +19,7 @@ async function query(filterBy = { name: "" }) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
     categories = data
   }
-  
+
   if (filterBy.name) {
     const regex = new RegExp(filterBy.name, "i")
     categories = categories.filter((category) => regex.test(category.name))
@@ -57,6 +57,8 @@ async function save(category) {
 function getEmptyCategory() {
   return {
     name: "",
+    imgUrl: "",
+    themeImgUrl: "",
   }
 }
 

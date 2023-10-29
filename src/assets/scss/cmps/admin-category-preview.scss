@@ -16,9 +16,26 @@
             font-size: em(20px);
         }
     }
-    
-    .actions {
+
+    .expand-container {
         margin: em(16px) 0 0 0;
-        height: em(28px);
+
+        display: flex;
+        flex-direction: column;
+        gap: em(10px);
+
+        .sub-title {
+            font-size: em(20px);
+
+        }
+
+        .img{
+            max-width: em(200px);
+            max-height: em(200px);
+            width: 100%;
+            height: 100%;
+            align-self: center;
+            object-fit: contain;
+        }
     }
 }

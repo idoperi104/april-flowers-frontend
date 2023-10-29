@@ -9,7 +9,6 @@ import {
 import {useEffectUpdate} from "../customHooks/useEffectUpdate"
 
 export function ProductIndex() {
-  console.log('render');
   const products = useSelector(
     (storeState) => storeState.productModule.products
   )

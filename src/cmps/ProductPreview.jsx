@@ -17,14 +17,14 @@ export function ProductPreview({ product, onAddToCart }) {
         <FontAwesomeIcon icon={faCartPlus} />
       </button>
       {getInStock() ? null : (
-        <Link to={`product/${product._id}`}>
+        <Link to={`/product/${product._id}`}>
           <div className="cover"></div>
           <div className="msg-container">
             <p>אזל המלאי</p>
           </div>
         </Link>
       )}
-      <Link className="container" to={`product/${product._id}`}>
+      <Link className="container" to={`/product/${product._id}`}>
         <img className="preview-img" src={product.imgUrl} alt="" />
         <h2 className="name">{product.name}</h2>
         <p className="category">{product.category}</p>

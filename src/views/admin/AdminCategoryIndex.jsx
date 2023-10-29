@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import {
   loadCategories,
   removeCategory,
-  setFilterBy,
+  setCategoryFilterBy,
 } from "../../store/actions/category.actions"
 import { useCallback, useEffect } from "react"
 import { AdminCategoryList } from "../../cmps/admin/AdminCategoryList.jsx"
@@ -12,22 +12,20 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons"
 import { AdminCategoryFilter } from "../../cmps/admin/AdminCategoryFilter"
 import { categoryService } from "../../services/category.service.local"
 
-
 export function AdminCategoryIndex() {
   const categories = useSelector(
     (storeState) => storeState.categoryModule.categories
   )
-  const filterBy = useSelector(
-    (storeState) => storeState.categoryModule.filterBy
+  // console.log("categories: ", categories)
+  const categoryFilterBy = useSelector(
+    (storeState) => storeState.categoryModule.categoryFilterBy
   )
 
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(loadCategories())
-
     return () => {
-      dispatch(setFilterBy(categoryService.getEmptyFilterBy()))
+      dispatch(setCategoryFilterBy(categoryService.getEmptyFilterBy()))
     }
   }, [])
 
@@ -39,8 +37,8 @@ export function AdminCategoryIndex() {
     }
   }, [])
 
-  const onChangeFilter = (filterBy) => {
-    dispatch(setFilterBy(filterBy))
+  const onChangeFilter = (categoryFilterBy) => {
+    dispatch(setCategoryFilterBy(categoryFilterBy))
     dispatch(loadCategories())
   }
 
@@ -61,7 +59,7 @@ export function AdminCategoryIndex() {
       <h2 className="title">רשימת קטגוריות:</h2>
 
       <AdminCategoryFilter
-        filterBy={filterBy}
+        categoryFilterBy={categoryFilterBy}
         onChangeFilter={onChangeFilter}
       />
 

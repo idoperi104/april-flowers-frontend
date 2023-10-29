@@ -27,34 +27,35 @@ export function AdminCategoryPreview({ category, onRemoveCategory }) {
           icon={isExpand ? faCaretUp : faCaretDown}
         />
       </div>
-      {/* {isExpand ? (
-        <ul className="sub-categories">
-          {category.subCategories.map((subCategory, idx) => (
-            <li key={idx} className="sub-category">
-              <span>{subCategory}</span>
-            </li>
-          ))}
-        </ul>
-      ) : null} */}
+
       {isExpand ? (
-        <div className="actions">
-          <button
-            className="btn btn-remove"
-            onClick={(ev) => {
-              ev.stopPropagation()
-              onRemoveCategory(category._id)
-            }}
-          >
-            <FontAwesomeIcon icon={faTrashCan} />
-          </button>
-          <NavLink
-            className="btn-link"
-            to={`/admin/categories/edit/${category._id}`}
-          >
-            <button className="btn">
-              <FontAwesomeIcon icon={faPenToSquare} />
+        <div className="expand-container">
+          <h4 className="sub-title">תמונה:</h4>
+          <img className="img" src={category.imgUrl} alt="" />
+
+          <h4 className="sub-title">תמונת נושא:</h4>
+          <img className="img" src={category.themeImgUrl} alt="" />
+
+          <div className="actions">
+            <button
+              className="btn btn-remove"
+              onClick={(ev) => {
+                ev.stopPropagation()
+                onRemoveCategory(category._id)
+              }}
+            >
+              <FontAwesomeIcon icon={faTrashCan} />
             </button>
-          </NavLink>
+
+            <NavLink
+              className="btn-link"
+              to={`/admin/categories/edit/${category._id}`}
+            >
+              <button className="btn">
+                <FontAwesomeIcon icon={faPenToSquare} />
+              </button>
+            </NavLink>
+          </div>
         </div>
       ) : null}
     </li>
