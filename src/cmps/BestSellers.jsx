@@ -8,7 +8,7 @@ export function BestSellers() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(setFilterBy({ sort: "salesAmount", count: 8 }))
+    dispatch(setFilterBy({ sort: "salesAmount", amount: 8 }))
     return () => {
       dispatch(setFilterBy(productService.getEmptyFilterBy()))
     }

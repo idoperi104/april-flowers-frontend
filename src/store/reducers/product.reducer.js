@@ -14,7 +14,7 @@ const INITIAL_STATE = {
     category: "",
     stock: "",
     sortBy: "",
-    count: 0,
+    amount: 0,
   },
 }
 

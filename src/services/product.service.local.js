@@ -14,7 +14,7 @@ export const productService = {
 window.rs = productService
 
 async function query(
-  filterBy = { name: "", category: "", stock: "", sortBy: "", count: 0 }
+  filterBy = { name: "", category: "", stock: "", sortBy: "", amount: 0 }
 ) {
   console.log('query products');
   var products = await storageService.query(STORAGE_KEY)
@@ -71,9 +71,9 @@ async function query(
     })
   }
 
-  if (filterBy.count) {
-    if (products.length > filterBy.count) {
-      products = products.slice(0, filterBy.count)
+  if (filterBy.amount) {
+    if (products.length > filterBy.amount) {
+      products = products.slice(0, filterBy.amount)
     }
   }
 
@@ -116,6 +116,6 @@ function getEmptyFilterBy() {
     category: "",
     stock: "",
     sortBy: "",
-    count: 0,
+    amount: 0,
   }
 }
