@@ -8,7 +8,8 @@ import {
 } from "../store/actions/cart.actions"
 import {useEffectUpdate} from "../customHooks/useEffectUpdate"
 
-export function ProductIndex() {
+export function 
+ProductIndex() {
   const products = useSelector(
     (storeState) => storeState.productModule.products
   )

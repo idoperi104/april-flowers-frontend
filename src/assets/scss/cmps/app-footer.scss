@@ -1,0 +1,22 @@
+.app-footer{
+    height: var(--app-footer-height);
+    // background-color: $clr-1;
+    border-top: 1px solid $border-clr;
+    // margin-top: em(60px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    direction: ltr;
+
+
+
+    .social{
+        display: flex;
+        font-size: em(25px);
+        gap: em(10px, 25px);
+        margin-top: em(15px, 25px);
+    }
+}

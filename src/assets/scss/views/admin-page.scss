@@ -1,4 +1,5 @@
 .admin-page{
     display: grid;
     grid-template-columns: auto 1fr;
+    min-height: calc(100vh - var(--app-footer-height) - var(--app-header-height));
 }

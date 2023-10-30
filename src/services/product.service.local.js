@@ -13,7 +13,10 @@ export const productService = {
 }
 window.rs = productService
 
-async function query(filterBy = { name: "", category: "", stock: "" }) {
+async function query(
+  filterBy = { name: "", category: "", stock: "", sortBy: "", count: 0 }
+) {
+  console.log('query products');
   var products = await storageService.query(STORAGE_KEY)
   if (!products || products.length === 0) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
@@ -44,13 +47,35 @@ async function query(filterBy = { name: "", category: "", stock: "" }) {
     }
   }
 
-  products = products.sort((a, b) => {
-    const nameA = a.name.toUpperCase()
-    const nameB = b.name.toUpperCase()
-    if (nameA < nameB) return -1
-    if (nameA > nameB) return 1
-    return 0
-  })
+  if (filterBy.sort) {
+    switch (filterBy.sort) {
+      case "salesAmount":
+        products = products.sort((a, b) => {
+          const num1 = a.salesAmount
+          const num2 = b.salesAmount
+          if (num1 < num2) return 1
+          if (num1 > num2) return -1
+          return 0
+        })
+        break
+      default:
+        break
+    }
+  } else {
+    products = products.sort((a, b) => {
+      const nameA = a.name.toUpperCase()
+      const nameB = b.name.toUpperCase()
+      if (nameA < nameB) return 1
+      if (nameA > nameB) return -1
+      return 0
+    })
+  }
+
+  if (filterBy.count) {
+    if (products.length > filterBy.count) {
+      products = products.slice(0, filterBy.count)
+    }
+  }
 
   return products
 }
@@ -77,17 +102,20 @@ function getEmptyProduct() {
   return {
     name: "",
     desc: "",
-    imgUrls: [],
+    imgUrl: "",
     category: "",
-    isSeveralSizes: false,
     price: 0,
-    prices: [],
     isInStock: true,
+    salesAmount: 0,
   }
 }
 
 function getEmptyFilterBy() {
   return {
     name: "",
+    category: "",
+    stock: "",
+    sortBy: "",
+    count: 0,
   }
 }

@@ -6,7 +6,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/F51AA887-A290-4DA3-B891-6AD852008523_1728x.jpg?v=1678432952",
     "category": "זרי פרחים",
     "price": 180,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 2
   },
   {
     "_id": "dwe332",
@@ -15,7 +16,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/1F2F5E8A-332A-4134-9C72-57C7F9DDA66F_1728x.jpg?v=1678157880",
     "category": "זרי פרחים",
     "price": 200,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "dwe331",
@@ -24,7 +26,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/9DB26CEF-106F-428A-B297-037953B5B992_900x.jpg?v=1658986924",
     "category": "זרי פרחים",
     "price": 200,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "aav331",
@@ -33,7 +36,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/83DEEC68-465F-4039-AE32-4FC3CB775D8B_900x.jpg?v=1658974843",
     "category": "זרי פרחים",
     "price": 180,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "aav221",
@@ -42,7 +46,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/898284F9-C6C7-4C15-A9EA-A8AA445D3932_1728x.jpg?v=1667455819",
     "category": "זרי פרחים",
     "price": 220,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "dewyg7",
@@ -51,7 +56,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/F7017CC0-55FF-4F34-B92D-E7CFF07D2C8B_1728x.jpg?v=1667456207",
     "category": "זרי פרחים",
     "price": 180,
-    "isInStock": false
+    "isInStock": false,
+    "salesAmount": 0
   },
   {
     "_id": "gh67dc",
@@ -60,7 +66,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/903CDFAD-91C3-4B06-8E81-032EBE55E738_1728x.jpg?v=1666856824",
     "category": "זרי פרחים",
     "price": 160,
-    "isInStock": false
+    "isInStock": false,
+    "salesAmount": 3
   },
   {
     "_id": "gth789",
@@ -69,7 +76,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/SUNSETRAINBOWBOUQUETPRODUCTCROPPED-1_1728x.jpg?v=1655631019",
     "category": "זרי פרחים",
     "price": 220,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "hjki98",
@@ -78,7 +86,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/2F5C077A-C474-4194-968A-8DA326FFF09E_1728x.jpg?v=1659065896",
     "category": "זרי פרחים",
     "price": 160,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 15
   },
   {
     "_id": "njmty8",
@@ -87,7 +96,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/7B544851-A045-4BCD-9A0D-C2A3F150972E_1728x.jpg?v=1667458051",
     "category": "זרי פרחים",
     "price": 200,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "bht678",
@@ -96,7 +106,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/ONLYPRETTIERBOUQUETPRODUCTCROPPED-6_1728x.jpg?v=1655346840",
     "category": "זרי פרחים",
     "price": 240,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "drre34",
@@ -105,7 +116,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/ALLUREBOUQUETPRODUCTCROPPED-1-2_1728x.jpg?v=1655347604",
     "category": "זרי פרחים",
     "price": 180,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 8
   },
 
 
@@ -116,7 +128,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/7DE55B51-758E-4763-AB41-05E5623DA30C_1728x.jpg?v=1667463068",
     "category": "מארזי פרחים",
     "price": 200,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 1
   },
   {
     "_id": "bfy654",
@@ -125,7 +138,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/CE19413B-1DCB-4C64-A4BA-452BE2183F45_1728x.jpg?v=1667468562",
     "category": "מארזי פרחים",
     "price": 180,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "few322",
@@ -134,7 +148,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/E5204411-FFD8-47DB-BE19-D34F9A8F98B4_1728x.jpg?v=1666684761",
     "category": "מארזי פרחים",
     "price": 240,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "h5643r",
@@ -143,7 +158,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/ALLUREBOXPRODUCTCROPPED-2-2_1728x.jpg?v=1655348760",
     "category": "מארזי פרחים",
     "price": 200,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "wec8c9",
@@ -152,7 +168,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/7F3FF0DA-8829-46F4-866E-6C2A8556F382_1728x.jpg?v=1667197123",
     "category": "מארזי פרחים",
     "price": 220,
-    "isInStock": false
+    "isInStock": false,
+    "salesAmount": 0
   },
   {
     "_id": "erf76w",
@@ -161,7 +178,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/VIVICIOUSBOXPRODUCTCROPPED-2_1728x.jpg?v=1655349453",
     "category": "מארזי פרחים",
     "price": 180,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "78btyw",
@@ -170,7 +188,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/TRUEROMANCEBOXPRODUCTCROPPED-4_1728x.jpg?v=1655347814",
     "category": "מארזי פרחים",
     "price": 160,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "wde78j",
@@ -179,7 +198,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/SWEETIEBOXPRODUCTCROPPED-4_1728x.jpg?v=1655348120",
     "category": "מארזי פרחים",
     "price": 180,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "ste753",
@@ -188,7 +208,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/E2725576-0601-4AE1-9299-A687FECC55B3_1728x.jpg?v=1665470588",
     "category": "מארזי פרחים",
     "price": 220,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "dgfv98",
@@ -197,7 +218,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/ANGELICBOXPRODUCTCROPPED-5_1728x.jpg?v=1655176418",
     "category": "מארזי פרחים",
     "price": 200,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
 
 
@@ -208,7 +230,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/ALLUREJARPRODUCTCROPPED-1-2_1728x.jpg?v=1655357427",
     "category": "צנצנות פרחים",
     "price": 160,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "wer234",
@@ -217,7 +240,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/SWEETIEJARPRODUCTCROPPED-3_1728x.jpg?v=1655357542",
     "category": "צנצנות פרחים",
     "price": 140,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "ert345",
@@ -226,7 +250,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/VIVACIOUSJARPRODUCTCROPPED-2_1728x.jpg?v=1655355801",
     "category": "צנצנות פרחים",
     "price": 180,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "rty567",
@@ -235,7 +260,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/APPLECINNAMONJARPRODUCTCROPPED_1728x.jpg?v=1655355580",
     "category": "צנצנות פרחים",
     "price": 220,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "tyu567",
@@ -244,7 +270,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/974C9D6A-575E-44B5-BEB3-85B85B8EA621_1728x.jpg?v=1667464408",
     "category": "צנצנות פרחים",
     "price": 220,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 3
   },
   {
     "_id": "tyu345",
@@ -253,7 +280,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/D48F9FFB-5D6D-406A-9302-F8ECF59E8177_1728x.jpg?v=1667463773",
     "category": "צנצנות פרחים",
     "price": 220,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "uio356",
@@ -262,7 +290,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/ONLYPRETTIERFLOWERCAKEPRODUCTCROPPED-12_1728x.jpg?v=1655355099",
     "category": "צנצנות פרחים",
     "price": 220,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "ghj456",
@@ -271,7 +300,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/SHININGSTARJARPRODUCTCROPPED-2_1728x.jpg?v=1655355213",
     "category": "צנצנות פרחים",
     "price": 220,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "dfg456",
@@ -280,7 +310,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/SWEETHEARTJARPRODUCTCROPPED-2_1728x.jpg?v=1655355493",
     "category": "צנצנות פרחים",
     "price": 220,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "jk8905",
@@ -289,7 +320,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/ANGELICJARPRODUCTCROPPED-2_1728x.jpg?v=1655357237",
     "category": "צנצנות פרחים",
     "price": 220,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "234dfg",
@@ -298,7 +330,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/TRUEROMANCEJARPRODUCTCROPPED-4_1728x.jpg?v=1655356984",
     "category": "צנצנות פרחים",
     "price": 220,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
 
 
@@ -309,7 +342,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/ModernDeluxeFlowerStand_1728x.jpg?v=1656919438",
     "category": "מעמדי פרחים",
     "price": 300,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "cd6dc7",
@@ -318,7 +352,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/BlossomFairyFlowerStand_1728x.jpg?v=1656919198",
     "category": "מעמדי פרחים",
     "price": 280,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "dc89cd",
@@ -327,7 +362,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/JoyfulpleasureFlowerStand_1728x.jpg?v=1656919339",
     "category": "מעמדי פרחים",
     "price": 300,
-    "isInStock": false
+    "isInStock": false,
+    "salesAmount": 0
   },
   {
     "_id": "cd45cd",
@@ -336,7 +372,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/UrbanPartyFlowerStand_1728x.jpg?v=1656919625",
     "category": "מעמדי פרחים",
     "price": 320,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "dc6cd1",
@@ -345,7 +382,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/PureDelightFlowerStand_1728x.jpg?v=1656919486",
     "category": "מעמדי פרחים",
     "price": 300,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "dc12cd",
@@ -354,7 +392,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/VibrantGlamorousFlowerStand_1728x.jpg?v=1656920110",
     "category": "מעמדי פרחים",
     "price": 320,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
 
   {
@@ -364,7 +403,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/AC482329-E74B-4D3E-8CAE-0DED8299A9D7_1728x.jpg?v=1672219519",
     "category": "סחלבים",
     "price": 240,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   },
   {
     "_id": "ws90ws",
@@ -373,7 +413,8 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/E806BDF5-4C31-4419-9759-0AC0180B23E9_1728x.jpg?v=1669020385",
     "category": "סחלבים",
     "price": 240,
-    "isInStock": false
+    "isInStock": false,
+    "salesAmount": 0
   },
   {
     "_id": "sw43sw",
@@ -382,6 +423,7 @@
     "imgUrl": "https://mflorist.hk/cdn/shop/products/B5F4A1E6-3AB3-4D19-8603-DC24A075E9A1_1728x.jpg?v=1672217821",
     "category": "סחלבים",
     "price": 240,
-    "isInStock": true
+    "isInStock": true,
+    "salesAmount": 0
   }
 ]

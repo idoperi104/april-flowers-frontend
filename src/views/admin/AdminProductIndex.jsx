@@ -25,9 +25,10 @@ export function AdminProductIndex() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(loadProducts())
+    // dispatch(loadProducts())
+    dispatch(setFilterBy({...productService.getEmptyFilterBy(), category: "זרי פרחים"}))
     dispatch(loadCategories())
-
+    
     return () => {
       dispatch(setFilterBy(productService.getEmptyFilterBy()))
     }

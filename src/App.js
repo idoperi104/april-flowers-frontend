@@ -17,15 +17,18 @@ import { useDispatch } from "react-redux"
 import { loadCategories } from "./store/actions/category.actions"
 import { useEffect } from "react"
 import { loadProducts } from "./store/actions/product.actions"
+import { HomePage } from "./views/HomePage"
+import { AppFooter } from "./cmps/AppFooter"
 
 function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(loadCategories())
-    dispatch(loadProducts())
+    // dispatch(loadProducts())
     return () => {
     }
+    // eslint-disable-next-line
   }, [])
   
 
@@ -37,7 +40,7 @@ function App() {
 
         <main className="container">
           <Routes>
-            <Route path="/" element={<ProductIndex />} />
+            <Route path="/" element={<HomePage />} />
 
             <Route path="/product" element={<ProductIndex />} />
             <Route path="/product/:id" element={<ProductDetails />} />
@@ -58,6 +61,8 @@ function App() {
             </Route>
           </Routes>
         </main>
+
+        <AppFooter/>
 
       </section>
     </Router>

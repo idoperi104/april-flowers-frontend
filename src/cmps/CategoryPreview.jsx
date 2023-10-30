@@ -8,7 +8,7 @@ export function CategoryPreview({ category }) {
     }
 
   return (
-    <NavLink className="category-preview" to={category.name} style={getStyle()}>
+    <NavLink className="category-preview" to={`/collection/${category.name}`} style={getStyle()}>
       <div className="cover"></div>
       <h2 className="name">{category.name}</h2>
     </NavLink>
