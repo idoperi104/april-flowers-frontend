@@ -34,11 +34,11 @@ function App() {
 
   return (
     <Router>
-      <section className="main-app main-layout">
+      <section className="main-app">
         <AppHeader />
         <CartIndex />
 
-        <main className="container">
+        <main className="main-container">
           <Routes>
             <Route path="/" element={<HomePage />} />
 

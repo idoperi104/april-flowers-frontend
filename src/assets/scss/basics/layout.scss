@@ -10,8 +10,7 @@
     // margin: auto;
 
     display: grid;
-    grid-template-columns: em(20px) 1fr em(20px);
-
+    grid-template-columns: em(15px) 1fr em(15px);
 
     &>* {
         grid-column: 2;
@@ -21,19 +20,19 @@
         grid-column: 1 / -1;
     }
 
-    @include mq-max(small-max) {
-    }
+    // @include mq-max(small) {
+    // }
+    
+    // @include mq(small) {
 
-    @include mq(small) {
-        // grid-template-columns: 16px 1fr 16px;
-    }
+    // }
 
     @include mq(medium) {
-        // grid-template-columns: 1fr 960px 1fr;
+        grid-template-columns: 1fr 990px 1fr;
     }
 
     @include mq(large) {
-        // grid-template-columns: 1fr 960px 1fr;
+        grid-template-columns: 1fr 1160px 1fr;
     }
 
     @include mq(x-large) {

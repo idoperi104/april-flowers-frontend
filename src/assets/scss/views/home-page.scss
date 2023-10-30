@@ -1,13 +1,14 @@
 .home-page {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
 
     .title {
-        font-size: em(36px);
+        font-size: em(24px);
         text-align: center;
     }
 
     .hero-container {
-        height: em(780px);
+        height: em(560px);
         background-size: cover;
         background-position: center;
         position: relative;
@@ -26,40 +27,40 @@
             right: 50%;
             transform: translate(50%, 50%);
             text-align: center;
-            max-width: em(480px);
+            max-width: em(360px);
+            width: 100%;
 
             .sub-title {
-                font-size: em(24px);
+                font-size: em(20px);
                 font-weight: 600;
             }
 
             .title {
-                font-size: em(54px);
+                font-size: em(36px);
                 font-weight: 600;
             }
 
             .btn-hero {
-                font-size: em(18px);
+                font-size: em(16px);
                 font-weight: 600;
-                height: em(60px, 18px);
-                width: em(218px, 18px);
+                height: em(60px, 16px);
+                width: em(140px, 16px);
                 color: $clr-6;
                 border: none;
-                border-radius: em(5px, 18px);
-                margin-top: em(18px, 18px);
+                border-radius: 5px;
+                margin-top: 1em;
                 background-color: $clr-1;
             }
         }
     }
 
     .intro-container {
-        max-width: em(800px);
-        margin: em(90px) auto em(90px) auto;
+        margin: em(40px) auto em(40px) auto;
         text-align: center;
 
         .title {
-            font-size: em(28px);
-            margin-bottom: em(20px, 28px);
+            font-size: em(24px);
+            margin-bottom: em(10px, 24px);
         }
 
         .text {
@@ -67,7 +68,48 @@
         }
     }
 
-    .category-index{
-        margin-bottom: em(90px);
+    .category-index {
+        margin-bottom: em(20px);
+    }
+
+    @include mq(small) {
+        .title {
+            font-size: em(28px);
+        }
+
+        .hero-container {
+            height: em(780px);
+
+            .content {
+                max-width: em(480px);
+
+                .sub-title {
+                    font-size: em(24px);
+                }
+
+                .title {
+                    font-size: em(54px);
+                }
+
+                .btn-hero {
+                    font-size: em(18px);
+                    width: em(218px, 18px);
+                }
+            }
+        }
+
+        .intro-container {
+            max-width: em(800px);
+            margin: em(90px) auto em(90px) auto;
+
+            .title {
+                font-size: em(28px);
+                margin-bottom: em(20px, 28px);
+            }
+        }
+
+        .category-index {
+            margin-bottom: em(90px);
+        }
     }
 }

@@ -12,8 +12,8 @@ export function HomePage() {
   }
 
   return (
-    // <section className="home-page main-layout">
-    <section className="home-page">
+    <section className="home-page full main-layout">
+    {/* <section className="home-page"> */}
       <div className="hero-container full" style={getStyle()}>
         <div className="cover"></div>
         <div className="content">

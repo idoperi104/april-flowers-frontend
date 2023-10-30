@@ -2,7 +2,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
     .theme-header {
-        height: em(560px);
+        height: em(270px);
         position: relative;
         // margin-bottom: em(60px);
         background-size: cover;
@@ -16,7 +16,7 @@
         }
 
         .title {
-            font-size: em(60px);
+            font-size: em(42px);
             font-weight: 600;
             color: $clr-1;
 
@@ -24,6 +24,23 @@
             transform: translate(-50%, -50%);
             top: 50%;
             left: 50%;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    @include mq(small) {
+        .theme-header {
+            height: em(360px);
+        }
+    }
+    @include mq(medium) {
+        .theme-header {
+            height: em(560px);
+
+            .title {
+                font-size: em(60px);
+            }
         }
     }
 }

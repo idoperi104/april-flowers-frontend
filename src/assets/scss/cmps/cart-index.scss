@@ -7,14 +7,14 @@
 
     position: fixed;
     // top: 0;
-    
-    .cover{
+
+    .cover {
         transition: all 200ms;
         background-color: $cart-cover-bgc;
         height: 100%;
         width: 100%;
     }
-    
+
     .container {
         transition: all 400ms ease-out;
         // transition: all .4 ease;
@@ -94,20 +94,21 @@
     }
 
 
-    
-    
+
+
     &.close {
         transition: transform;
         transition-delay: 400ms;
         transform: translate(100%);
-        
-        .cover{
+
+        .cover {
             opacity: 0;
         }
-        
-        .container{
+
+        .container {
             transform: translate(150%);
-            *{
+
+            * {
                 width: 0;
             }
         }

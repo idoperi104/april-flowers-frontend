@@ -17,7 +17,7 @@ export function CategoryIndex() {
   }, [])
 
   return categories ? (
-    <section className="category-index">
+    <section className="category-index full">
       <CategoryList categories={categories} />
     </section>
   ) : (

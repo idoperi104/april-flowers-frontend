@@ -17,6 +17,7 @@ body {
     background-color: $clr-2;
     direction: rtl;
     // font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100vw;
 }
 
 img {
@@ -78,4 +79,12 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+svg {
+    color: $clr-6;
+}
+
+.main-container, .main-app{
+    width: 100%;
 }

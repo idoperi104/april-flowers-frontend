@@ -1,6 +1,11 @@
 :root {
-    --app-header-height: 74px;
-    --app-footer-height: 200px;
+    --app-header-height: 52px;
+    --app-footer-height: 120px;
+    
+    @include mq(medium) {
+        --app-header-height: 74px;
+        --app-footer-height: 200px;
+    }
 }
 
 

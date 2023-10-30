@@ -142,10 +142,9 @@ export function toggleIsOpen() {
   }
 }
 
-export function setIsCartOpen(flag) {
-  return async (dispatch, getState) => {
+export function setIsCartOpen(isOpen) {
+  return async (dispatch) => {
     try {
-      const isOpen = flag
       const action = { type: SET_IS_CART_OPEN, isOpen }
       dispatch(action)
       return "Toggled!"
