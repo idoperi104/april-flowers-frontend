@@ -3,7 +3,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-radius: em(5px);
     position: relative;
-    
+
     .btn-bag {
         position: absolute;
         font-size: 16px;
@@ -15,14 +15,14 @@
         left: 5px;
         top: 5px;
     }
-    
+
     .cover {
         height: 100%;
         width: 100%;
         background-color: $clr-cover-1;
         border-radius: em(5px);
         position: absolute;
-        
+
     }
 
     .msg-container {
@@ -42,9 +42,6 @@
 
     }
 
-
-
-
     .container {
         display: inline-block;
         margin: em(15px);
@@ -58,11 +55,10 @@
         }
 
         .preview-img {
-            height: em(350px);
-            width: em(350px);
+            width: 100%;
             object-fit: cover;
             background-color: $clr-2;
-
+            aspect-ratio: 1 /1;
         }
 
         .name {
@@ -82,5 +78,33 @@
 
     &:hover {
         cursor: pointer;
+    }
+
+    &.small {
+        .container {
+            margin: em(10px);
+
+            &>* {
+                margin-bottom: em(5px);
+            }
+
+            & :last-child {
+                margin-bottom: em(5px);
+            }
+
+            .name {
+                font-size: em(16px);
+                font-weight: 600;
+            }
+
+            .category {
+                font-size: em(14px);
+            }
+
+            .price {
+                font-size: em(16px);
+            }
+
+        }
     }
 }

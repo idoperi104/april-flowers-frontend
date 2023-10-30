@@ -4,15 +4,13 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "react-router-dom"
 
-export function ProductPreview({ product, onAddToCart }) {
+export function ProductPreview({ product, onAddToCart, size="" }) {
   function getInStock() {
     return product.isInStock ? true : false
   }
 
-  
-
   return (
-    <li className="product-preview">
+    <li className={`product-preview ${size}`}>
       <button className="btn-bag" onClick={(ev) => {onAddToCart(ev, product)}}>
         <FontAwesomeIcon icon={faCartPlus} />
       </button>

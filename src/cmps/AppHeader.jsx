@@ -29,7 +29,7 @@ export function AppHeader() {
   }
 
   return (
-    <header className="app-header">
+    <header className="app-header full">
       <section className="actions-container">
         <button className="btn-search">
           <FontAwesomeIcon icon={faMagnifyingGlass} />

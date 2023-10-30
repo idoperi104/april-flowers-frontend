@@ -1,23 +1,23 @@
-import { useEffect } from "react"
 import { ProductIndex } from "../views/ProductIndex"
+import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { productService } from "../services/product.service.local"
 import { setFilterBy } from "../store/actions/product.actions"
 
-export function BestSellers() {
+export function ProductIndexWrapper({title = "", filterBy = {}, size=""}) {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(setFilterBy({ sort: "salesAmount", amount: 8 }))
+    dispatch(setFilterBy({...productService.getEmptyFilterBy(), ...filterBy}))
     return () => {
       dispatch(setFilterBy(productService.getEmptyFilterBy()))
     }
   }, [])
 
   return (
-    <section className="best-sellers">
-      <h2 className="title">הנמכרים ביותר</h2>
-      <ProductIndex />
+    <section className="product-index-wrapper">
+      <h2 className="title">{title}</h2>
+      <ProductIndex className={size} />
     </section>
   )
 }

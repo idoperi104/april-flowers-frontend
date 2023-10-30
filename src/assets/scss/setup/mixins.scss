@@ -21,14 +21,11 @@
 
 /* Breakpoint mixins */
 $breakpoints: (
-    medium: em(640px),
-    // medium: em(800px),
-    large: em(992px),
-    mq-540: em(540px),
-    mq-768: em(768px),
-    mq-769: em(769px),
-    mq-1024: em(1024px),
-    mq-1200: em(1200px),
+    small-max: em(767px),
+    small: em(768px),
+    medium: em(1024px),
+    large: em(1200px),
+    x-large: em(1600px),
 );
 
 @mixin mq-max($key) {

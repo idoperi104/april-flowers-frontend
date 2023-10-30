@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom"
 import heroImg from "../assets/imgs/hero.jpeg"
-import { ProductIndex } from "./ProductIndex"
-import { BestSellers } from "../cmps/BestSellers"
 import { CategoryIndex } from "../cmps/CategoryIndex"
+import { ProductIndexWrapper } from "../cmps/ProductIndexWrapper"
+import { ProductIndexFromService } from "../cmps/ProductIndexFromService"
 
 export function HomePage() {
   function getStyle() {
@@ -12,7 +12,8 @@ export function HomePage() {
   }
 
   return (
-    <section className="home-page main-layout">
+    // <section className="home-page main-layout">
+    <section className="home-page">
       <div className="hero-container full" style={getStyle()}>
         <div className="cover"></div>
         <div className="content">
@@ -23,6 +24,7 @@ export function HomePage() {
           </NavLink>
         </div>
       </div>
+
       <div className="intro-container">
         <h2 className="title">חנות פרחים שמתמחה בתרגום מילים לפרחים</h2>
         <p className="text">
@@ -31,10 +33,31 @@ export function HomePage() {
           סביבות עבודה וקהילות באמצעות אוסף אמנות פרחוני המעוצב במומחיות שלנו.
         </p>
       </div>
-      <BestSellers />
-      
+
+      <ProductIndexWrapper
+        title="הנמכרים ביותר"
+        filterBy={{ sort: "salesAmount", amount: 8 }}
+      />
+
       <h2 className="title">הקטגוריות שלנו</h2>
       <CategoryIndex />
+
+      <ProductIndexFromService
+        title="טעימה מזרי הפרחים..."
+        filterBy={{ category: "זרי פרחים", amount: 6 }}
+        size="small" 
+      />
+
+      <ProductIndexFromService
+        title="מחפשים רהיט חדש?"
+        filterBy={{ category: "מעמדי פרחים", amount: 6 }}
+        size="small" 
+      />
+
+      {/* <ProductIndexFromService
+        title="קצת מזרי הפרחים..."
+        filterBy={{ category: "זרי פרחים", amount: 4 }}
+      /> */}
     </section>
   )
 }

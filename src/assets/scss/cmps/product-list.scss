@@ -6,4 +6,9 @@
     justify-content: center;
 
     margin: em(30px) 0 em(90px) 0;
+
+    &.small {
+        grid-template-columns: repeat(6, 1fr);
+
+    }
 }

@@ -50,7 +50,8 @@ export function CategoryPage() {
   }
 
   return category ? (
-    <section className="category-page main-layout">
+    // <section className="category-page main-layout">
+    <section className="category-page">
       <div className="theme-header full" style={getStyle()}>
         <div className="cover"></div>
         <h2 className="title">{category.name}</h2>

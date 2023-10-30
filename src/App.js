@@ -34,7 +34,7 @@ function App() {
 
   return (
     <Router>
-      <section className="main-app">
+      <section className="main-app main-layout">
         <AppHeader />
         <CartIndex />
 

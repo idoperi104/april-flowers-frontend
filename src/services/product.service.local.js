@@ -16,7 +16,6 @@ window.rs = productService
 async function query(
   filterBy = { name: "", category: "", stock: "", sortBy: "", amount: 0 }
 ) {
-  console.log('query products');
   var products = await storageService.query(STORAGE_KEY)
   if (!products || products.length === 0) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
