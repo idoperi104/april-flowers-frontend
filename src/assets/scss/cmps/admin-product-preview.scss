@@ -1,14 +1,19 @@
 .admin-product-preview {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 6fr 4fr;
     justify-items: center;
     align-items: center;
-
-    height: rem(104px);
     position: relative;
-    font-size: 18px;
 
+    font-size: 18px;
+    padding: em(5px);
+    text-align: center;
+    // height: em(104px);
+
+    .name{
+        font-weight: 600;
+    }
 
     .preview-img {
         height: em(80px);
@@ -19,6 +24,7 @@
         width: clamp(10px, 100%, 120px);
         font-size: 18px;
         border-radius: em(8px, 18px);
+        color: $clr-6;
 
         &.green {
             background-color: $clr-admin-preview-green;
@@ -29,7 +35,6 @@
         }
     }
 
-
     &::before {
         content: '';
         height: 1px;
@@ -37,5 +42,18 @@
         background-color: $clr-2;
         position: absolute;
         bottom: 0;
+    }
+
+    @include mq(small) {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto;
+        gap: 8px;
+        justify-items: center;
+        align-items: center;
+
+        font-size: 18px;
+        height: em(104px, 18px);
+        padding: 0;
+
     }
 }

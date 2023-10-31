@@ -1,10 +1,9 @@
 .admin-side-bar {
-    // background-color: $clr-3;
     display: flex;
-    flex-direction: column;
-    width: em(240px);
-    padding: em(16px) em(16px) em(16px) em(16px);
-    gap: em(8px);
+    gap: em(5px);
+    position: sticky;
+    top: var(--app-header-height);
+    z-index: 1;
 
     a {
         height: em(40px);
@@ -12,14 +11,55 @@
         align-items: center;
         gap: em(8px);
         font-size: em(20px);
-        border-radius: em(8px);
         padding: em(8px);
-        
-        &:hover{
-            background-color: $clr-3;
+    }
+
+    @include mq-max(small) {
+        background-color: $clr-1;
+
+        overflow-x: scroll;
+
+        a {
+            border-radius: em(5px) em(5px) 0 0;
+            margin: em(4px) 0 0 0;
+
+            &.active {
+                box-shadow: 0px 0px 4px 2px rgba($color: $clr-6, $alpha: 0.2);
+            }
         }
-        &.active{
-            background-color: $clr-1;
+
+    }
+
+    @include mq(small) {
+        gap: em(10px);
+        padding: em(10px);
+        background-color: $clr-2;
+
+
+        a {
+            border-radius: em(5px);
+
+            &.active {
+                background-color: $clr-1;
+            }
         }
+
+    }
+
+    @include mq(medium) {
+       
+        a {
+            &:hover {
+                background-color: $clr-3;
+            }
+        }
+
+    }
+
+    @include mq(large) {
+        flex-direction: column;
+        width: em(240px);
+        padding: em(16px) em(16px) em(16px) em(16px);
+
     }
 }

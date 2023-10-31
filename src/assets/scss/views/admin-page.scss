@@ -1,5 +1,13 @@
-.admin-page{
-    display: grid;
-    grid-template-columns: auto 1fr;
+.admin-page {
+    // display: grid;
+    // grid-template-columns: auto 1fr;
     min-height: calc(100vh - var(--app-footer-height) - var(--app-header-height));
+    // padding: 0 em(10px);
+    
+    @include mq(large) {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        // padding: 0 em(20px);
+
+    }
 }

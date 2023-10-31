@@ -21,22 +21,26 @@ export function AdminProductFilter({ filterBy, onChangeFilter }) {
         <FontAwesomeIcon className="icon" icon={faMagnifyingGlass} />
       </div>
 
-      <label htmlFor="category">קטגוריה:</label>
-      <select {...register("category", "text")}>
-        <option value="">כל הקטגוריות</option>
-        {categories?.map((category) => (
-          <option key={category._id} value={category.name}>
-            {category.name}
-          </option>
-        ))}
-      </select>
+      <div>
+        <label htmlFor="category">קטגוריה:</label>
+        <select {...register("category", "text")}>
+          <option value="">כל הקטגוריות</option>
+          {categories?.map((category) => (
+            <option key={category._id} value={category.name}>
+              {category.name}
+            </option>
+          ))}
+        </select>
+      </div>
 
-      <label htmlFor="stock">מלאי:</label>
-      <select {...register("stock", "text")}>
-        <option value="">הכל</option>
-        <option value="inStock">במלאי</option>
-        <option value="outOfStock">מחוץ למלאי</option>
-      </select>
+      <div>
+        <label htmlFor="stock">מלאי:</label>
+        <select {...register("stock", "text")}>
+          <option value="">הכל</option>
+          <option value="inStock">במלאי</option>
+          <option value="outOfStock">מחוץ למלאי</option>
+        </select>
+      </div>
     </form>
   )
 }

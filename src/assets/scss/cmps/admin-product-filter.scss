@@ -1,10 +1,14 @@
 .admin-product-filter {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    column-gap: em(20px);
+    row-gap: em(10px);
+    margin: em(15px) 0;
 
     label {
         font-size: 18px;
-        margin: 0 em(24px, 18px) 0 em(8px, 18px);
+        margin: 0 0 0 em(8px, 18px);
     }
 
     select {
@@ -12,6 +16,7 @@
         border: 1px solid $clr-6;
         border-radius: em(4px);
         padding: em(8px);
-        font-size: em(16px);
+        font-size: 1em;
+        color: $clr-6;
     }
 }

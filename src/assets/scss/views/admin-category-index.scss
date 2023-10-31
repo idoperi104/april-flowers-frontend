@@ -1,5 +1,23 @@
-.admin-category-index{
-    .title{
-        margin: em(24px, 24px) 0 em(12px, 24px) 0;
+.admin-category-index {
+    margin: em(10px);
+
+    .title {
+        margin: em(15px, 24px) 0;
+    }
+
+    .admin-category-list {
+        margin-top: em(15px);
+    }
+
+    @include mq(small) {
+        margin: em(20px);
+    }
+
+    @include mq(large) {
+        .title {
+            margin: em(20px, 24px) 0;
+        }
+
+        margin: em(20px) 0;
     }
 }

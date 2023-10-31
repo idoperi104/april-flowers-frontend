@@ -16,7 +16,7 @@ export function AdminProductPreview({
   return (
     <li className="admin-product-preview">
       <img className="preview-img" src={product.imgUrl} alt="" />
-      <h4>{product.name}</h4>
+      <h4 className="name">{product.name}</h4>
       <button
         className={`btn-in-stock ${getIsInStockClass()}`}
         onClick={() =>

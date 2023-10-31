@@ -1,12 +1,12 @@
 .admin-product-edit {
     background-color: $clr-1;
-    margin: em(16px) 0 em(16px) em(16px);
+    margin: em(10px);
     padding: em(16px);
     border-radius: em(10px);
     
     display: flex;
     flex-direction: column;
-
+    
     .btn-img-uploader {
         align-self: flex-start;
         font-size: 16px;
@@ -14,14 +14,30 @@
         border: 1px solid $clr-4;
         padding: em(6px) em(12px);
         margin: 0 0 em(12px) 0;
-
+        
         &:hover {
             box-shadow: 0px 0px 3px 1px rgb(0, 0, 0, 0.3);
         }
     }
-
+    
     .btn-close {
         margin: 0;
         align-self: flex-end;
     }
+
+    button, select{
+        color: $clr-6;
+    }
+
+    @include mq(small) {
+    margin: em(15px);
+
+    }
+
+    @include mq(large) {
+        margin: em(15px) 0 em(15px) em(15px);
+
+    }
+
+
 }

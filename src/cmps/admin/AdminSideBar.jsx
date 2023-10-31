@@ -3,7 +3,6 @@ import {
   faChartPie,
   faListUl,
   faRectangleList,
-  faTruck,
   faUserGroup,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -37,10 +36,10 @@ export function AdminSideBar() {
         <p>מנהלים</p>
       </NavLink>
 
-      <NavLink to="/admin/shipping">
+      {/* <NavLink to="/admin/shipping">
       <FontAwesomeIcon icon={faTruck} />
       <p>מחירי משלוח</p>
-      </NavLink>
+      </NavLink> */}
     </nav>
   )
 }
