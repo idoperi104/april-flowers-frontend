@@ -25,12 +25,15 @@ function App() {
 
   useEffect(() => {
     dispatch(loadCategories())
-    // dispatch(loadProducts())
-    return () => {
-    }
-    // eslint-disable-next-line
+    window.addEventListener("resize", appHeight)
+    appHeight()
+    return () => {}
   }, [])
-  
+
+  function appHeight() {
+    const doc = document.documentElement
+    doc.style.setProperty("--app-height", `${window.innerHeight}px`)
+  }
 
   return (
     <Router>
@@ -62,8 +65,7 @@ function App() {
           </Routes>
         </main>
 
-        <AppFooter/>
-
+        <AppFooter />
       </section>
     </Router>
   )

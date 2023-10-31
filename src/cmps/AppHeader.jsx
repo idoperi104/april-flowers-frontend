@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import { useDispatch, useSelector } from "react-redux"
 import { setIsCartOpen, toggleIsOpen } from "../store/actions/cart.actions"
-import { toggleIsMenuOpen } from "../store/actions/app.actions"
+import { setIsMenuOpen, toggleIsMenuOpen } from "../store/actions/app.actions"
 
 export function AppHeader() {
   const navigate = useNavigate()
@@ -28,19 +28,23 @@ export function AppHeader() {
 
   function onLogoClicked() {
     dispatch(setIsCartOpen(false))
+    dispatch(setIsMenuOpen(false))
     navigate("/")
   }
 
   function onToggleCart() {
     dispatch(toggleIsOpen())
+    dispatch(setIsMenuOpen(false))
   }
 
   function onToggleMenu() {
     dispatch(toggleIsMenuOpen())
+    dispatch(setIsCartOpen(false))
   }
 
   function onNavigate() {
     dispatch(setIsCartOpen(false))
+    dispatch(setIsMenuOpen(false))
   }
 
   return (
