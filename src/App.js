@@ -19,6 +19,7 @@ import { useEffect } from "react"
 import { loadProducts } from "./store/actions/product.actions"
 import { HomePage } from "./views/HomePage"
 import { AppFooter } from "./cmps/AppFooter"
+import { ScrollToTop } from "./cmps/ScrollToTop"
 
 function App() {
   const dispatch = useDispatch()
@@ -42,6 +43,8 @@ function App() {
         <CartIndex />
 
         <main className="main-container">
+          <ScrollToTop />
+          
           <Routes>
             <Route path="/" element={<HomePage />} />
 
