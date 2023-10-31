@@ -54,8 +54,14 @@
         }
     }
 
+
+
+    .category-index {
+        margin: em(20px) 0;
+    }
+
     .intro-container {
-        margin: em(40px) auto em(40px) auto;
+        margin: 0 auto em(40px) auto;
         text-align: center;
 
         .title {
@@ -66,10 +72,6 @@
         .text {
             line-height: 1.5;
         }
-    }
-
-    .category-index {
-        margin-bottom: em(20px);
     }
 
     @include mq(small) {
@@ -100,7 +102,7 @@
 
         .intro-container {
             max-width: em(800px);
-            margin: em(90px) auto em(90px) auto;
+            margin: 0 auto em(90px) auto;
 
             .title {
                 font-size: em(28px);

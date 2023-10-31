@@ -10,7 +10,7 @@
     // margin: auto;
 
     display: grid;
-    grid-template-columns: em(15px) 1fr em(15px);
+    grid-template-columns: em(10px) 1fr em(10px);
 
     &>* {
         grid-column: 2;
@@ -23,9 +23,9 @@
     // @include mq-max(small) {
     // }
     
-    // @include mq(small) {
-
-    // }
+    @include mq(small) {
+        grid-template-columns: em(15px) 1fr em(15px);
+    }
 
     @include mq(medium) {
         grid-template-columns: 1fr 990px 1fr;

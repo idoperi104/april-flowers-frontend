@@ -13,7 +13,6 @@ export function HomePage() {
 
   return (
     <section className="home-page full main-layout">
-    {/* <section className="home-page"> */}
       <div className="hero-container full" style={getStyle()}>
         <div className="cover"></div>
         <div className="content">
@@ -25,8 +24,11 @@ export function HomePage() {
         </div>
       </div>
 
+      {/* <h2 className="title">מה אתם מחפשים?</h2> */}
+      <CategoryIndex />
+
       <div className="intro-container">
-        <h2 className="title">חנות פרחים שמתמחה בתרגום מילים לפרחים</h2>
+        <h2 className="title">פרחי אפריל - חנות פרחים שמתמחה בתרגום מילים לפרחים</h2>
         <p className="text">
           חנות פרחים משפחתית שנוסדה בשנת 1995. אצלינו השרות עם חיוך ואחריות.
           הכוונה שלנו היא להשפיע על השפעות חיוביות להעשיר את חייהם של אחרים,
@@ -36,22 +38,19 @@ export function HomePage() {
 
       <ProductIndexWrapper
         title="הנמכרים ביותר"
-        filterBy={{ sort: "salesAmount", amount: 8 }}
+        filterBy={{ sort: "salesAmount", amount: 6 }}
       />
 
-      <h2 className="title">הקטגוריות שלנו</h2>
-      <CategoryIndex />
-
-      <ProductIndexFromService
+      {/* <ProductIndexFromService
         title="טעימה מזרי הפרחים..."
         filterBy={{ category: "זרי פרחים", amount: 6 }}
-        size="small" 
-      />
+        size="small"
+      /> */}
 
       <ProductIndexFromService
         title="מחפשים רהיט חדש?"
         filterBy={{ category: "מעמדי פרחים", amount: 6 }}
-        size="small" 
+        size="small"
       />
 
       {/* <ProductIndexFromService

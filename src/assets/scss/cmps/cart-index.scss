@@ -1,11 +1,10 @@
 .cart-index {
-    position: absolute;
+    position: fixed;
     z-index: 1;
     width: 100%;
     height: calc(100vh - var(--app-header-height));
     scroll-behavior: none;
 
-    position: fixed;
     // top: 0;
 
     .cover {
