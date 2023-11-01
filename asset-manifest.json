@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/april-flowers-frontend/static/css/main.14c02131.css",
-    "main.js": "/april-flowers-frontend/static/js/main.44982da8.js",
+    "main.js": "/april-flowers-frontend/static/js/main.20673c4b.js",
     "static/js/787.983d5d78.chunk.js": "/april-flowers-frontend/static/js/787.983d5d78.chunk.js",
     "static/media/hero.jpeg": "/april-flowers-frontend/static/media/hero.542f2e2db3d0156c235d.jpeg",
     "static/media/drag.png": "/april-flowers-frontend/static/media/drag.37bff14b0abdce48ffc4.png",
     "index.html": "/april-flowers-frontend/index.html",
     "main.14c02131.css.map": "/april-flowers-frontend/static/css/main.14c02131.css.map",
-    "main.44982da8.js.map": "/april-flowers-frontend/static/js/main.44982da8.js.map",
+    "main.20673c4b.js.map": "/april-flowers-frontend/static/js/main.20673c4b.js.map",
     "787.983d5d78.chunk.js.map": "/april-flowers-frontend/static/js/787.983d5d78.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.14c02131.css",
-    "static/js/main.44982da8.js"
+    "static/js/main.20673c4b.js"
   ]
 }
