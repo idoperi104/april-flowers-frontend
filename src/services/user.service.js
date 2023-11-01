@@ -28,7 +28,7 @@ window.userService = userService
 // window.loadUsers = loadUsers
 
 async function getUsers(filterBy = { txt: "" }) {
-  let users = await storageService.query("user")
+  let users = await storageService.query(STORAGE_KEY)
 
   if (!users || users.length === 0) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
@@ -107,13 +107,13 @@ async function signup(userCred) {
 }
 
 async function logout() {
-  sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
+  localStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
   // socketService.logout()
   // return await httpService.post('auth/logout')
 }
 
 function getLoggedinUser() {
-  return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
+  return JSON.parse(localStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
 
 function _saveLocalUser(user) {
@@ -123,7 +123,7 @@ function _saveLocalUser(user) {
     username: user.username,
     isAdmin: user.isAdmin,
   }
-  sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
+  localStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
   return user
 }
 
