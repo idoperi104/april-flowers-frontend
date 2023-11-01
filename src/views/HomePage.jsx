@@ -25,7 +25,6 @@ export function HomePage() {
       </div>
 
       {/* <h2 className="title">מה אתם מחפשים?</h2> */}
-      <CategoryIndex />
 
       <div className="intro-container">
         <h2 className="title">פרחי אפריל - חנות פרחים שמתמחה בתרגום מילים לפרחים</h2>
@@ -35,6 +34,9 @@ export function HomePage() {
           סביבות עבודה וקהילות באמצעות אוסף אמנות פרחוני המעוצב במומחיות שלנו.
         </p>
       </div>
+
+      <CategoryIndex />
+
 
       <ProductIndexWrapper
         title="הנמכרים ביותר"

@@ -20,12 +20,16 @@ import { loadProducts } from "./store/actions/product.actions"
 import { HomePage } from "./views/HomePage"
 import { AppFooter } from "./cmps/AppFooter"
 import { ScrollToTop } from "./cmps/ScrollToTop"
+import { LoginSignup } from "./views/LoginSignup"
+import { loadLoggedinUser } from "./store/actions/user.actions"
+import { AdminUserIndex } from "./views/admin/AdminUserIndex"
 
 function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(loadCategories())
+    dispatch(loadLoggedinUser())
     window.addEventListener("resize", appHeight)
     appHeight()
     return () => {}
@@ -48,6 +52,8 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
 
+            <Route path="/login" element={<LoginSignup />} />
+
             <Route path="/product" element={<ProductIndex />} />
             <Route path="/product/:id" element={<ProductDetails />} />
 
@@ -62,8 +68,7 @@ function App() {
                 <Route path="edit/:id?" element={<AdminCategoryEdit />} />
               </Route>
               <Route path="orders" element={<AdminDashboard />} />
-              <Route path="admins" element={<AdminDashboard />} />
-              <Route path="shipping" element={<AdminDashboard />} />
+              <Route path="users" element={<AdminUserIndex />} />
             </Route>
           </Routes>
         </main>

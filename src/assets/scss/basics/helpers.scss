@@ -49,50 +49,50 @@
 }
 
 // form
-.simple-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: 15px auto;
+// .simple-form {
+//     display: flex;
+//     flex-direction: column;
+//     width: 300px;
+//     margin: 15px auto;
 
-    &>*:not(:last-child) {
-        margin-bottom: 10px;
-    }
+//     &>*:not(:last-child) {
+//         margin-bottom: 10px;
+//     }
 
-    input:not([type="checkbox"]),
-    button {
-        padding: 5px 8px;
-        width: 100%;
-    }
+//     input:not([type="checkbox"]),
+//     button {
+//         padding: 5px 8px;
+//         width: 100%;
+//     }
 
-    .form-errors {
-        text-align: center;
-        margin-top: 24px;
-        color: red;
-        font-size: 15px;
-    }
-}
+//     .form-errors {
+//         text-align: center;
+//         margin-top: 24px;
+//         color: red;
+//         font-size: 15px;
+//     }
+// }
 
-.form-style {
-    display: grid;
-    gap: em(8px);
+// .form-style {
+//     display: grid;
+//     gap: em(8px);
 
-    label {
-        font-size: rem(18px);
-        text-transform: capitalize
-    }
+//     label {
+//         font-size: rem(18px);
+//         text-transform: capitalize
+//     }
 
-    input {
-        height: rem(32px);
-        max-width: rem(480px);
-    }
+//     input {
+//         height: rem(32px);
+//         max-width: rem(480px);
+//     }
 
-    select {
-        height: rem(32px);
-        max-width: rem(480px);
-    }
+//     select {
+//         height: rem(32px);
+//         max-width: rem(480px);
+//     }
 
-}
+// }
 
 .basic-form {
     display: flex;
@@ -131,14 +131,17 @@
 
         font-size: 16px;
         height: em(32px);
-        width: em(64px);
-        border-radius: em(8px);
+        min-width: em(64px);
+        border-radius: em(5px);
         border: 1px solid $clr-4;
+        color: $clr-6;
 
-        &:hover {
+        @include hover-supported(){
             box-shadow: 0px 0px 3px 1px rgb(0, 0, 0, 0.3);
         }
     }
+
+    // @include mq
 }
 
 .link-add {
@@ -185,12 +188,28 @@
 .btn {
     font-size: 16px;
     height: em(32px);
-    width: em(42px);
-    border-radius: em(10px);
+    min-width: em(42px);
+    border-radius: em(5px);
     border: none;
     margin-inline-end: em(8px);
+    color: $clr-6;
 
-    &:hover {
+
+    @include hover-supported(){
+        box-shadow: 0px 0px 3px 1px rgb(0, 0, 0, 0.3);
+    }
+}
+
+.btn-full {
+    font-size: 16px;
+    height: em(32px);
+    width: 100%;
+    border-radius: em(5px);
+    border: 1px solid $clr-4;
+    margin: em(10px) 0;
+    color: $clr-6;
+
+    @include hover-supported(){
         box-shadow: 0px 0px 3px 1px rgb(0, 0, 0, 0.3);
     }
 }
@@ -224,13 +243,12 @@
 }
 
 // search bar
-
 .search-container {
     height: em(40px);
     width: em(240px);
     position: relative;
     // margin: em(16px) 0;
-    
+
     .input-search {
         width: 100%;
         height: 100%;
@@ -248,10 +266,3 @@
         color: $clr-5;
     }
 }
-
-// .cover {
-//     width: 100%;
-//     height: 100%;
-//     background-color: $clr-6;
-//     opacity: 0.1;
-// }

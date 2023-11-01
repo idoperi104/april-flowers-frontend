@@ -31,7 +31,7 @@ export function AdminSideBar() {
         <p>הזמנות</p>
       </NavLink>
 
-      <NavLink to="/admin/admins">
+      <NavLink to="/admin/users">
       <FontAwesomeIcon icon={faUserGroup} />
         <p>מנהלים</p>
       </NavLink>

@@ -1,0 +1,24 @@
+.login-signup {
+    background-color: $clr-1;
+    min-height: calc($min-height - em(40px));
+    margin: em(10px);
+    padding: em(10px);
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+        font-size: em(24px);
+        text-align: center;
+        margin-bottom: em(15px, 24px);
+    }
+
+    @include mq(small) {
+        max-width: em(500px);
+        margin: em(20px) auto;
+        padding: em(20px);
+    }
+}

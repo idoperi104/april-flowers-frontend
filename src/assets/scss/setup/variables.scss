@@ -9,6 +9,8 @@
     }
 }
 
+$min-height: calc(var(--app-height) - var(--app-header-height) - var(--app-footer-height));
+
 
 // Colors
 $clr-1: #ffffff;

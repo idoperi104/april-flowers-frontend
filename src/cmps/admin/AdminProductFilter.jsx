@@ -24,12 +24,12 @@ export function AdminProductFilter({ filterBy, onChangeFilter }) {
       <div>
         <label htmlFor="category">קטגוריה:</label>
         <select {...register("category", "text")}>
-          <option value="">כל הקטגוריות</option>
           {categories?.map((category) => (
             <option key={category._id} value={category.name}>
               {category.name}
             </option>
           ))}
+          <option value="">כל הקטגוריות</option>
         </select>
       </div>
 

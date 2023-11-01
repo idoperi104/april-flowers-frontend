@@ -57,11 +57,11 @@
 
 
     .category-index {
-        margin: em(20px) 0;
+        // margin: em(20px) 0;
     }
 
     .intro-container {
-        margin: 0 auto em(40px) auto;
+        margin: em(40px) auto em(40px) auto;
         text-align: center;
 
         .title {
@@ -102,7 +102,7 @@
 
         .intro-container {
             max-width: em(800px);
-            margin: 0 auto em(90px) auto;
+            margin: em(90px) auto em(90px) auto;
 
             .title {
                 font-size: em(28px);

@@ -3,14 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faBars,
   faCartShopping,
-  faMagnifyingGlass,
-  faUser,
+  faShop,
 } from "@fortawesome/free-solid-svg-icons"
 import { useDispatch, useSelector } from "react-redux"
 import { setIsCartOpen, toggleIsOpen } from "../store/actions/cart.actions"
 import { setIsMenuOpen, toggleIsMenuOpen } from "../store/actions/app.actions"
 
 export function AppHeader() {
+  const loggedinUser = useSelector(
+    (storeState) => storeState.userModule.loggedinUser
+  )
+
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
@@ -22,29 +25,34 @@ export function AppHeader() {
     (storeState) => storeState.appModule.isMenuOpen
   )
 
+  const isCartOpen = useSelector(
+    (storeState) => storeState.cartModule.isCartOpen
+  )
+
   function getIsOpenClass() {
     return isMenuOpen ? "" : "close"
   }
 
   function onLogoClicked() {
-    dispatch(setIsCartOpen(false))
-    dispatch(setIsMenuOpen(false))
+    if (isMenuOpen) dispatch(setIsMenuOpen(false))
+    if (isCartOpen) dispatch(setIsCartOpen(false))
+    window.scrollTo(0, 0)
     navigate("/")
   }
 
   function onToggleCart() {
-    dispatch(toggleIsOpen())
     dispatch(setIsMenuOpen(false))
+    dispatch(toggleIsOpen())
   }
 
   function onToggleMenu() {
-    dispatch(toggleIsMenuOpen())
     dispatch(setIsCartOpen(false))
+    dispatch(toggleIsMenuOpen())
   }
 
   function onNavigate() {
-    dispatch(setIsCartOpen(false))
-    dispatch(setIsMenuOpen(false))
+    if (isCartOpen) dispatch(setIsCartOpen(false))
+    if (isMenuOpen) dispatch(setIsMenuOpen(false))
   }
 
   return (
@@ -61,14 +69,13 @@ export function AppHeader() {
             </div>
           ) : null}
         </button>
-        {/* <button className="btn-search">
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
-        </button> */}
-        <NavLink onClick={onNavigate} to="/admin/products">
-          <button className="btn-user">
-            <FontAwesomeIcon icon={faUser} />
-          </button>
-        </NavLink>
+        {loggedinUser?.isAdmin ? (
+          <NavLink onClick={onNavigate} to="/admin/dashboard">
+            <button className="btn-user">
+              <FontAwesomeIcon icon={faShop} />
+            </button>
+          </NavLink>
+        ) : null}
       </section>
 
       <nav className={`nav-container ${getIsOpenClass()}`}>
