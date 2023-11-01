@@ -107,13 +107,13 @@ async function signup(userCred) {
 }
 
 async function logout() {
-  localStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
+  sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
   // socketService.logout()
   // return await httpService.post('auth/logout')
 }
 
 function getLoggedinUser() {
-  return JSON.parse(localStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
+  return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
 
 function _saveLocalUser(user) {
@@ -123,7 +123,7 @@ function _saveLocalUser(user) {
     username: user.username,
     isAdmin: user.isAdmin,
   }
-  localStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
+  sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
   return user
 }
 

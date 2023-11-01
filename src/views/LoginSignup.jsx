@@ -23,7 +23,7 @@ export function LoginSignup() {
   )
 
   useEffect(() => {
-    // dispatch(loadUsers())
+    dispatch(loadUsers())
   }, [])
 
   useEffect(() => {
