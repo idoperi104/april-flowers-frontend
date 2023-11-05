@@ -97,6 +97,10 @@ async function save(product) {
   return savedProduct
 }
 
+async function getProductsPrice(productIdsQuantity){
+  
+}
+
 function getEmptyProduct() {
   return {
     name: "",

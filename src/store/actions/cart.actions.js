@@ -86,7 +86,7 @@ export function updateCartItemQuantity(cartItem, num) {
 
       if (cartItem.quantity === 0) dispatch(removeCartItem(cartItem._id))
       else dispatch(updateCartItem(cartItem))
-      
+
       return "quantity updated!"
     } catch (error) {
       console.log("error:", error)
@@ -98,16 +98,13 @@ export function updateCartItemQuantity(cartItem, num) {
 //   return async (dispatch, getState) => {
 //     try {
 //       const cartItems = getState().cartModule.cartItems
-//       console.log("cartItems: ", cartItems)
 
-//       const initialVal = 0
-//       const sum = cartItems.reduce(
-//         (acc, curr) => acc + curr.price * curr.quantity,
-//         initialVal
-//       )
+//       const productIdsQuantity = cartItems.map((cartItem) => ({
+//         productId: cartItem.productId,
+//         quantity: cartItem.quantity,
+//       }))
 
-//       console.log(sum)
-//       return sum
+//       console.log("productIdsQuantity: ", productIdsQuantity)
 //     } catch (error) {
 //       console.log("error:", error)
 //     }

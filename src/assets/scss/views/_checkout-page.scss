@@ -1,0 +1,40 @@
+.checkout-page {
+    display: grid;
+    background-color: $clr-1;
+
+    .order-preview {
+        margin-bottom: em(10px);
+        padding: em(10px);
+        width: 100%;
+        background-color: $clr-2;
+        // border-radius: 5px;
+
+        .info-container {
+            display: flex;
+            justify-content: space-between;
+            padding: em(10px);
+
+            p {
+                font-size: em(20px);
+                font-weight: 600;
+            }
+        }
+    }
+
+    @include mq-max(small) {
+        .basic-form{
+            padding: em(10px);
+        }
+    }
+
+    @include mq(small) {
+        max-width: 768px;
+        padding: em(20px);
+        margin: auto;
+        .order-preview {
+            margin-bottom: em(20px);
+            padding: em(20px);
+            border-radius: 5px;
+        }
+    }
+}

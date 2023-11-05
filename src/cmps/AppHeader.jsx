@@ -79,6 +79,11 @@ export function AppHeader() {
       </section>
 
       <nav className={`nav-container ${getIsOpenClass()}`}>
+        {loggedinUser?.isAdmin ? (
+          <NavLink onClick={onNavigate} to="/admin/dashboard">
+            עמוד מנהל
+          </NavLink>
+        ) : null}
         <NavLink onClick={onNavigate} to="/collection">
           לכל הקטגוריות
         </NavLink>

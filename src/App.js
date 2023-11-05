@@ -16,13 +16,13 @@ import { CategoryPage } from "./views/CategoryPage.jsx"
 import { useDispatch } from "react-redux"
 import { loadCategories } from "./store/actions/category.actions"
 import { useEffect } from "react"
-import { loadProducts } from "./store/actions/product.actions"
 import { HomePage } from "./views/HomePage"
 import { AppFooter } from "./cmps/AppFooter"
 import { ScrollToTop } from "./cmps/ScrollToTop"
 import { LoginSignup } from "./views/LoginSignup"
 import { loadLoggedinUser } from "./store/actions/user.actions"
 import { AdminUserIndex } from "./views/admin/AdminUserIndex"
+import { CheckoutPage } from "./views/CheckoutPage"
 
 function App() {
   const dispatch = useDispatch()
@@ -59,6 +59,8 @@ function App() {
 
             <Route path="/collection" element={<CollectionPage />} />
             <Route path="/collection/:name" element={<CategoryPage />} />
+
+            <Route path="/checkout" element={<CheckoutPage />} />
 
             <Route path="/admin" element={<AdminPage />}>
               <Route path="dashboard" element={<AdminDashboard />} />

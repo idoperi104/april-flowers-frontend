@@ -9,12 +9,14 @@ import {
 import { CartList } from "../cmps/CartList"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
+import { useNavigate } from "react-router-dom"
 
 export function CartIndex() {
   const cartItems = useSelector((storeState) => storeState.cartModule.cartItems)
   const isOpen = useSelector((storeState) => storeState.cartModule.isOpen)
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   useEffect(() => {
     dispatch(loadCartItems())
@@ -39,12 +41,16 @@ export function CartIndex() {
       (acc, cartItem) => acc + cartItem.price * cartItem.quantity,
       initialVal
     )
-
     return totalPrice
   }
 
-  function onNavigate(){
+  function onNavigate() {
     dispatch(setIsCartOpen(false))
+  }
+
+  function onCheckoutClicked() {
+    dispatch(setIsCartOpen(false))
+    navigate("checkout")
   }
 
   if (!cartItems) return <div>Loading...</div>
@@ -66,7 +72,9 @@ export function CartIndex() {
         <div className="bottom-container">
           <h2 className="title">מחיר כולל</h2>
           <span className="price">{getTotalPrice()} ₪</span>
-          <button className="btn-checkout">מעבר לתשלום</button>
+          <button className="btn-checkout" onClick={onCheckoutClicked}>
+            מעבר לתשלום
+          </button>
         </div>
       </div>
     </section>
