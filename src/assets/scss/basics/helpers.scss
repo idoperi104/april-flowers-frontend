@@ -43,56 +43,32 @@
         align-items: center;
     }
 
+    &.gap-6 {
+        gap: 6px;
+    }
+
     >*.full-grow {
         flex: 1;
     }
+
+
 }
 
-// form
-// .simple-form {
-//     display: flex;
-//     flex-direction: column;
-//     width: 300px;
-//     margin: 15px auto;
+.grid {
+    display: grid;
 
-//     &>*:not(:last-child) {
-//         margin-bottom: 10px;
-//     }
+    &.column {
+        grid-auto-flow: column;
+    }
 
-//     input:not([type="checkbox"]),
-//     button {
-//         padding: 5px 8px;
-//         width: 100%;
-//     }
+    &.justify-center {
+        justify-items: center;
+    }
 
-//     .form-errors {
-//         text-align: center;
-//         margin-top: 24px;
-//         color: red;
-//         font-size: 15px;
-//     }
-// }
-
-// .form-style {
-//     display: grid;
-//     gap: em(8px);
-
-//     label {
-//         font-size: rem(18px);
-//         text-transform: capitalize
-//     }
-
-//     input {
-//         height: rem(32px);
-//         max-width: rem(480px);
-//     }
-
-//     select {
-//         height: rem(32px);
-//         max-width: rem(480px);
-//     }
-
-// }
+    &.align-center {
+        align-content: center;
+    }
+}
 
 .basic-form {
     display: flex;
@@ -136,7 +112,7 @@
         border: 1px solid $clr-4;
         color: $clr-6;
 
-        @include hover-supported(){
+        @include hover-supported() {
             box-shadow: 0px 0px 3px 1px rgb(0, 0, 0, 0.3);
         }
     }
@@ -195,7 +171,7 @@
     color: $clr-6;
 
 
-    @include hover-supported(){
+    @include hover-supported() {
         box-shadow: 0px 0px 3px 1px rgb(0, 0, 0, 0.3);
     }
 }
@@ -209,7 +185,7 @@
     margin: em(10px) 0;
     color: $clr-6;
 
-    @include hover-supported(){
+    @include hover-supported() {
         box-shadow: 0px 0px 3px 1px rgb(0, 0, 0, 0.3);
     }
 }

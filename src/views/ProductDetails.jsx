@@ -3,7 +3,11 @@ import { useDispatch } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
 import { productService } from "../services/product.service.local"
 import { loadCategories } from "../store/actions/category.actions"
-import { addCartItem, setIsCartOpen, toggleIsOpen } from "../store/actions/cart.actions"
+import {
+  addCartItem,
+  setIsCartOpen,
+  toggleIsOpen,
+} from "../store/actions/cart.actions"
 
 export function ProductDetails() {
   const [product, setProduct] = useState(null)
@@ -51,7 +55,10 @@ export function ProductDetails() {
       </div>
       <div className="actions">
         <h2 className="price">{product.price} ₪</h2>
-        <button className={`btn-add-to-cart ${getIsOutOfSockClass()}`} onClick={onAddToCart}>
+        <button
+          className={`btn-add-to-cart ${getIsOutOfSockClass()}`}
+          onClick={onAddToCart}
+        >
           {getBtnTxt()}
         </button>
       </div>

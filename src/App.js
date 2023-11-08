@@ -23,6 +23,7 @@ import { LoginSignup } from "./views/LoginSignup"
 import { loadLoggedinUser } from "./store/actions/user.actions"
 import { AdminUserIndex } from "./views/admin/AdminUserIndex"
 import { CheckoutPage } from "./views/CheckoutPage"
+import { AdminOrderIndex } from "./views/admin/AdminOrderIndex"
 
 function App() {
   const dispatch = useDispatch()
@@ -63,13 +64,13 @@ function App() {
             <Route path="/checkout" element={<CheckoutPage />} />
 
             <Route path="/admin" element={<AdminPage />}>
-              <Route path="dashboard" element={<AdminDashboard />} />
+              {/* <Route path="dashboard" element={<AdminDashboard />} /> */}
               <Route path="products" element={<AdminProductIndex />} />
               <Route path="products/edit/:id?" element={<AdminProductEdit />} />
               <Route path="categories" element={<AdminCategoryIndex />}>
                 <Route path="edit/:id?" element={<AdminCategoryEdit />} />
               </Route>
-              <Route path="orders" element={<AdminDashboard />} />
+              <Route path="orders" element={<AdminOrderIndex />} />
               <Route path="users" element={<AdminUserIndex />} />
             </Route>
           </Routes>

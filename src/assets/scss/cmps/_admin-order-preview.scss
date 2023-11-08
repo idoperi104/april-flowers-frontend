@@ -1,0 +1,72 @@
+.admin-order-preview {
+    display: grid;
+    gap: 20px;
+
+    background-color: $clr-1;
+    padding: em(10px);
+    font-size: 18px;
+    line-height: 1.35;
+    min-height: em(150px, 18px);
+
+    position: relative;
+
+    .btn-toggle {
+        align-self: center;
+        justify-self: center;
+        height: em(35px);
+        min-width: em(100px);
+        font-size: 18px;
+        border-radius: em(8px, 18px);
+        color: $clr-6;
+
+        &.green {
+            background-color: $clr-admin-preview-green;
+        }
+
+        &.red {
+            background-color: $clr-admin-preview-red;
+        }
+    }
+
+    .btn {
+        max-width: em(40px, 18px);
+    }
+
+    &::before {
+        content: '';
+        height: 1px;
+        width: 100%;
+        background-color: $clr-2;
+        position: absolute;
+        bottom: 0;
+    }
+
+    @include mq-max(medium) {
+        margin-bottom: em(10px, 18px);
+        border-radius: 5px;
+        grid-template-columns: repeat(2, 1fr);
+
+        .order-info,
+        .more-info {
+            grid-column: 1 / -1;
+        }
+
+        .title {
+            font-weight: 600;
+            font-size: em(18px, 18px);
+            margin-bottom: em(8px, 18px);
+        }
+
+        .btn {
+            justify-self: flex-end;
+        }
+    }
+
+    @include mq(medium) {
+        grid-template-columns: repeat(6, 1fr);
+
+        .title {
+            display: none;
+        }
+    }
+}

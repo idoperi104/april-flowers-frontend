@@ -1,0 +1,56 @@
+.admin-order-index {
+    margin: em(10px);
+    max-width: 1200px;
+
+    .admin-order-table {
+        
+        .table-header {
+            background-color: $clr-1;
+            border-radius: em(5px) em(5px) 0 0;
+            display: none;
+        }
+    }
+
+    @include mq(small) {
+        margin: em(15px);
+
+
+    }
+
+    @include mq(medium) {
+        margin: em(20px);
+
+        .admin-order-table {
+            .table-header {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+
+                height: em(72px);
+                position: relative;
+                align-items: center;
+                gap: 8px;
+
+
+                &::before {
+                    content: '';
+                    height: 2px;
+                    width: 100%;
+                    background-color: $clr-2;
+                    position: absolute;
+                    bottom: 0;
+                }
+
+                .item {
+                    font-weight: 600;
+                    justify-self: center;
+                }
+            }
+        }
+
+    }
+
+    @include mq(large) {
+        margin: em(20px) 0 em(20px) em(20px);
+
+    }
+}

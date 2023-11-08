@@ -8,6 +8,7 @@ import {
   updateCartItemQuantity,
 } from "../store/actions/cart.actions"
 import { CartList } from "../cmps/CartList"
+import { useNavigate } from "react-router-dom"
 
 export function CheckoutPage() {
   const [register, order, handleChange, setOrder] = useFormRegister({
@@ -17,6 +18,7 @@ export function CheckoutPage() {
   const cartItems = useSelector((storeState) => storeState.cartModule.cartItems)
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   useEffect(() => {
     setOrder((prevOrder) => ({
@@ -38,13 +40,8 @@ export function CheckoutPage() {
   async function onSaveOrder(ev) {
     ev.preventDefault()
     try {
-      setOrder((prevOrder) => ({
-        ...prevOrder,
-        isPaid: true,
-        createdAt: Date.now(),
-      }))
-      await orderService.save({ ...order })
-      // navigate("/admin/products")
+      await orderService.save({ ...order, isPaid: true, createdAt: Date.now() })
+      navigate("/")
     } catch (error) {
       console.log("error:", error)
     }

@@ -70,7 +70,7 @@ export function AppHeader() {
           ) : null}
         </button>
         {loggedinUser?.isAdmin ? (
-          <NavLink onClick={onNavigate} to="/admin/dashboard">
+          <NavLink onClick={onNavigate} to="/admin/orders">
             <button className="btn-user">
               <FontAwesomeIcon icon={faShop} />
             </button>
@@ -80,7 +80,7 @@ export function AppHeader() {
 
       <nav className={`nav-container ${getIsOpenClass()}`}>
         {loggedinUser?.isAdmin ? (
-          <NavLink onClick={onNavigate} to="/admin/dashboard">
+          <NavLink onClick={onNavigate} to="/admin/orders">
             עמוד מנהל
           </NavLink>
         ) : null}

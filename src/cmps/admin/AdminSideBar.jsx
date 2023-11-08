@@ -11,14 +11,9 @@ import { NavLink } from "react-router-dom"
 export function AdminSideBar() {
   return (
     <nav className="admin-side-bar">
-      <NavLink to="/admin/dashboard">
-        <FontAwesomeIcon icon={faChartPie} />
-        <p>נתונים</p>
-      </NavLink>
-
-      <NavLink to="/admin/products">
-        <FontAwesomeIcon icon={faBox} />
-        <p>מוצרים</p>
+      <NavLink to="/admin/orders">
+        <FontAwesomeIcon icon={faRectangleList} />
+        <p>הזמנות</p>
       </NavLink>
 
       <NavLink to="/admin/categories">
@@ -26,15 +21,20 @@ export function AdminSideBar() {
         <p>קטגוריות</p>
       </NavLink>
 
-      <NavLink to="/admin/orders">
-        <FontAwesomeIcon icon={faRectangleList} />
-        <p>הזמנות</p>
+      <NavLink to="/admin/products">
+        <FontAwesomeIcon icon={faBox} />
+        <p>מוצרים</p>
       </NavLink>
 
       <NavLink to="/admin/users">
-      <FontAwesomeIcon icon={faUserGroup} />
+        <FontAwesomeIcon icon={faUserGroup} />
         <p>מנהלים</p>
       </NavLink>
+
+      {/* <NavLink to="/admin/dashboard">
+        <FontAwesomeIcon icon={faChartPie} />
+        <p>נתונים</p>
+      </NavLink> */}
 
       {/* <NavLink to="/admin/shipping">
       <FontAwesomeIcon icon={faTruck} />
