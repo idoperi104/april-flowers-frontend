@@ -8,6 +8,8 @@ const INITIAL_STATE = {
   orders: [],
   orderFilterBy: {
     name: "",
+    shipped: "",
+    paid: "",
   },
   watchedOrder: null,
 }
@@ -27,9 +29,7 @@ export function orderReducer(state = INITIAL_STATE, action = {}) {
     case REMOVE_ORDER:
       return {
         ...state,
-        orders: state.orders.filter(
-          (order) => order._id !== action.orderId
-        ),
+        orders: state.orders.filter((order) => order._id !== action.orderId),
       }
     case UPDATE_ORDER:
       return {

@@ -13,6 +13,7 @@ import { productService } from "../../services/product.service.local"
 import { setFilterBy } from "../../store/actions/product.actions"
 import { AdminProductFilter } from "../../cmps/admin/AdminProductFilter"
 import { loadCategories } from "../../store/actions/category.actions"
+import { utilService } from "../../services/util.service"
 
 export function AdminProductIndex() {
   const products = useSelector(
@@ -50,11 +51,12 @@ export function AdminProductIndex() {
     }
   }
 
-  const onChangeFilter = (filterBy) => {
-    dispatch(setFilterBy(filterBy))
+  const onChangeFilter = utilService.debounce((newFilterBy) => {
+    if(JSON.stringify(newFilterBy) === JSON.stringify(filterBy)) return
+    dispatch(setFilterBy(newFilterBy))
     dispatch(loadProducts())
-  }
-
+  })
+  
   if (!products) return <div>Loading...</div>
   return (
     <section className="admin-product-index">

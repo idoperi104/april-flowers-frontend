@@ -39,5 +39,17 @@ export function useFormRegister(initialFields, cb = () => {}) {
     }
   }
 
-  return [register, fields, handleChange, setFields]
+  function validation() {
+    var isValidate = true
+    for (const field in fields) {
+      const res = fields[field]
+      if (res === "" || res === null || res < 0) {
+        isValidate = false
+        break
+      }
+    }
+    return isValidate
+  }
+
+  return [register, fields, handleChange, setFields, validation]
 }

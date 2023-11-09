@@ -12,25 +12,47 @@ export const orderService = {
   getEmptyFilterBy,
 }
 
-async function query(filterBy = { name: "" }) {
+async function query(filterBy = { name: "", shipped: "", paid: "" }) {
   var orders = await storageService.query(STORAGE_KEY)
   if (!orders || orders.length === 0) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
     orders = data
   }
 
-  // if (filterBy.name) {
-  //   const regex = new RegExp(filterBy.name, "i")
-  //   orders = orders.filter((order) => regex.test(order.name))
-  // }
+  if (filterBy.name) {
+    const regex = new RegExp(filterBy.name, "i")
+    orders = orders.filter((order) =>
+      regex.test(`${order.firstName} ${order.lastName}`)
+    )
+  }
 
-  // orders = orders.sort((a, b) => {
-  //   const nameA = a.name.toUpperCase()
-  //   const nameB = b.name.toUpperCase()
-  //   if (nameA < nameB) return -1
-  //   if (nameA > nameB) return 1
-  //   return 0
-  // })
+  if (filterBy.shipped) {
+    switch (filterBy.shipped) {
+      case "shipped":
+        orders = orders.filter((order) => order.isShipped === true)
+        break
+      case "notShipped":
+        orders = orders.filter((order) => order.isShipped === false)
+        break
+      default:
+        break
+    }
+  }
+
+  if (filterBy.paid) {
+    switch (filterBy.paid) {
+      case "paid":
+        orders = orders.filter((order) => order.isPaid === true)
+        break
+      case "notPaid":
+        orders = orders.filter((order) => order.isPaid === false)
+        break
+      default:
+        break
+    }
+  }
+
+  orders = orders.sort((a, b) => b.createdAt - a.createdAt)
 
   return orders
 }
@@ -75,5 +97,7 @@ function getEmptyOrder() {
 function getEmptyFilterBy() {
   return {
     name: "",
+    shipped: "",
+    paid: "",
   }
 }

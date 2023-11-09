@@ -11,8 +11,9 @@ export const utilService = {
 }
 
 function makeId(length = 6) {
-  var txt = ''
-  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  var txt = ""
+  var possible =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 
   for (var i = 0; i < length; i++) {
     txt += possible.charAt(Math.floor(Math.random() * possible.length))
@@ -23,43 +24,43 @@ function makeId(length = 6) {
 
 function makeLorem(size = 100) {
   var words = [
-    'The sky',
-    'above',
-    'the port',
-    'was',
-    'the color of television',
-    'tuned',
-    'to',
-    'a dead channel',
-    '.',
-    'All',
-    'this happened',
-    'more or less',
-    '.',
-    'I',
-    'had',
-    'the story',
-    'bit by bit',
-    'from various people',
-    'and',
-    'as generally',
-    'happens',
-    'in such cases',
-    'each time',
-    'it',
-    'was',
-    'a different story',
-    '.',
-    'It',
-    'was',
-    'a pleasure',
-    'to',
-    'burn',
+    "The sky",
+    "above",
+    "the port",
+    "was",
+    "the color of television",
+    "tuned",
+    "to",
+    "a dead channel",
+    ".",
+    "All",
+    "this happened",
+    "more or less",
+    ".",
+    "I",
+    "had",
+    "the story",
+    "bit by bit",
+    "from various people",
+    "and",
+    "as generally",
+    "happens",
+    "in such cases",
+    "each time",
+    "it",
+    "was",
+    "a different story",
+    ".",
+    "It",
+    "was",
+    "a pleasure",
+    "to",
+    "burn",
   ]
-  var txt = ''
+  var txt = ""
   while (size > 0) {
     size--
-    txt += words[Math.floor(Math.random() * words.length)] + ' '
+    txt += words[Math.floor(Math.random() * words.length)] + " "
   }
   return txt
 }
@@ -79,7 +80,7 @@ function randomPastTime() {
   return Date.now() - pastTime
 }
 
-function debounce(func, timeout = 300) {
+function debounce(func, timeout = 400) {
   let timer
   return (...args) => {
     clearTimeout(timer)
@@ -99,49 +100,65 @@ function loadFromStorage(key) {
 }
 
 function getDate(timestamp) {
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ]
   const date = new Date(timestamp)
   const month = months[date.getMonth()]
   let day = date.getDate()
   return `${month} ${day}`
 }
 
-
-
 function daysAgo(timestamp) {
-  const now = Date.now();
-  const diff = now - timestamp;
+  const now = Date.now()
+  const diff = now - timestamp
 
   // less than 10 seconds
   if (diff < 10000) {
-    return 'just now';
+    return "just now"
   }
   if (diff < 60000) {
-    return 'a few seconds ago';
+    return "a few seconds ago"
   }
 
   // more than 1 minute and less than 60 minutes
   if (diff < 3600000) {
-    const minutes = Math.floor(diff / 60000);
-    return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+    const minutes = Math.floor(diff / 60000)
+    return `${minutes} minute${minutes > 1 ? "s" : ""} ago`
   }
 
   // more than 60 minutes and less than 24 hours
   if (diff < 86400000) {
-    const hours = Math.floor(diff / 3600000);
-    const date = new Date(timestamp);
-    const yesterday = new Date(now - 86400000).getDate();
+    const hours = Math.floor(diff / 3600000)
+    const date = new Date(timestamp)
+    const yesterday = new Date(now - 86400000).getDate()
     if (date.getDate() === yesterday) {
-      return `yesterday at ${date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+      return `yesterday at ${date.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      })}`
     }
-    return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+    return `${hours} hour${hours > 1 ? "s" : ""} ago`
   }
 
   // more than yesterday at 00:01 am
-  const date = new Date(timestamp);
-  return `on ${date.toLocaleDateString()} at ${date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+  const date = new Date(timestamp)
+  return `on ${date.toLocaleDateString()} at ${date.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  })}`
 }
-
 
 //   const seconds = Math.floor((new Date() - date) / 1000);
 
@@ -175,9 +192,9 @@ function daysAgo(timestamp) {
 //   return Math.floor(seconds) + ' seconds ago';
 // };
 
-  // const diffTime = today.getTime() - date.getTime()
-  // const diffDays = Math.floor(diffTime / (1000 * 3600 * 24))
-  // if (diffDays === 0) return date.getHours().toString().padStart(2, '0') + ':' + date.getMinutes().toString().padStart(2, '0')
-  // if (diffDays === 1) return 'yesterday'
-  // if (diffDays > 5) return date.toLocaleDateString()
-  // return `${diffDays} days ago`
+// const diffTime = today.getTime() - date.getTime()
+// const diffDays = Math.floor(diffTime / (1000 * 3600 * 24))
+// if (diffDays === 0) return date.getHours().toString().padStart(2, '0') + ':' + date.getMinutes().toString().padStart(2, '0')
+// if (diffDays === 1) return 'yesterday'
+// if (diffDays > 5) return date.toLocaleDateString()
+// return `${diffDays} days ago`

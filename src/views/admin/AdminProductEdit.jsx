@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
 
 export function AdminProductEdit() {
-  const [register, product, handleChange, setProduct] = useFormRegister({
+  const [register, product, handleChange, setProduct, validation] = useFormRegister({
     ...productService.getEmptyProduct(),
   })
 
@@ -42,6 +42,7 @@ export function AdminProductEdit() {
 
   async function onSaveProduct(ev) {
     ev.preventDefault()
+    validation()
     try {
       await productService.save({ ...product })
       navigate("/admin/products")

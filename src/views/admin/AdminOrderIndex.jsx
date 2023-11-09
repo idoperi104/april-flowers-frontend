@@ -3,12 +3,18 @@ import { useDispatch, useSelector } from "react-redux"
 import {
   loadOrders,
   removeOrder,
+  setOrderFilterBy,
   updateOrderKeyVal,
 } from "../../store/actions/order.actions"
 import { AdminOrderList } from "../../cmps/admin/AdminOrderList"
+import { AdminOrderFilter } from "../../cmps/admin/AdminOrderFilter"
+import { utilService } from "../../services/util.service"
 
 export function AdminOrderIndex() {
   const orders = useSelector((storeState) => storeState.orderModule.orders)
+  const filterBy = useSelector(
+    (storeState) => storeState.orderModule.orderFilterBy
+  )
 
   const dispatch = useDispatch()
 
@@ -33,9 +39,16 @@ export function AdminOrderIndex() {
     return () => {}
   }, [])
 
+  const onChangeFilter = utilService.debounce((filterBy) => {
+    dispatch(setOrderFilterBy(filterBy))
+    dispatch(loadOrders())
+  })
+
   if (!orders) return <div>Loading...</div>
   return (
     <section className="admin-order-index">
+      <AdminOrderFilter filterBy={filterBy} onChangeFilter={onChangeFilter} />
+
       <div className="admin-order-table">
         <div className="table-header">
           <h3 className="item">פרטי ההזמנה</h3>
