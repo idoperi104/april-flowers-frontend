@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useFormRegister } from "../customHooks/useFormRegister"
-import { orderService } from "../services/order.service.local"
+import { orderService } from "../services/order.service"
 import { useEffect } from "react"
 import {
   getPriceCartItems,

@@ -1,4 +1,4 @@
-import { orderService } from "../../services/order.service.local"
+import { orderService } from "../../services/order.service"
 import {
   REMOVE_ORDER,
   SET_ORDERS,
