@@ -1,8 +1,9 @@
 import Axios from 'axios'
 
-const BASE_URL = process.env.NODE_ENV === 'production'
-    ? '//april-flowers-api.onrender.com/api/'
-    : '//localhost:3030/api/'
+// const BASE_URL = process.env.NODE_ENV === 'production'
+//     ? '//april-flowers-api.onrender.com/api/'
+//     : '//localhost:3030/api/'
+const BASE_URL = '//april-flowers-api.onrender.com/api/'
 
 
 const axios = Axios.create({
