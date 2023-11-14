@@ -27,12 +27,15 @@ export function AdminProductIndex() {
 
   useEffect(() => {
     // dispatch(loadProducts())
-    dispatch(setFilterBy({...productService.getEmptyFilterBy(), category: "זרי פרחים"}))
+    dispatch(
+      setFilterBy({
+        ...productService.getEmptyFilterBy(),
+        category: "זרי פרחים",
+      })
+    )
     dispatch(loadCategories())
-    
-    return () => {
-      dispatch(setFilterBy(productService.getEmptyFilterBy()))
-    }
+
+    return () => {}
   }, [])
 
   const onRemoveProduct = useCallback(async (productId) => {
@@ -52,11 +55,11 @@ export function AdminProductIndex() {
   }
 
   const onChangeFilter = utilService.debounce((newFilterBy) => {
-    if(JSON.stringify(newFilterBy) === JSON.stringify(filterBy)) return
+    if (JSON.stringify(newFilterBy) === JSON.stringify(filterBy)) return
     dispatch(setFilterBy(newFilterBy))
     dispatch(loadProducts())
   })
-  
+
   if (!products) return <div>Loading...</div>
   return (
     <section className="admin-product-index">

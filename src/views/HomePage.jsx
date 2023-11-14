@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom"
 import heroImg from "../assets/imgs/hero.jpeg"
 import { CategoryIndex } from "../cmps/CategoryIndex"
-import { ProductIndexWrapper } from "../cmps/ProductIndexWrapper"
 import { ProductIndexFromService } from "../cmps/ProductIndexFromService"
 
 export function HomePage() {
@@ -27,7 +26,9 @@ export function HomePage() {
       {/* <h2 className="title">מה אתם מחפשים?</h2> */}
 
       <div className="intro-container">
-        <h2 className="title">פרחי אפריל - חנות פרחים שמתמחה בתרגום מילים לפרחים</h2>
+        <h2 className="title">
+          פרחי אפריל - חנות פרחים שמתמחה בתרגום מילים לפרחים
+        </h2>
         <p className="text">
           חנות פרחים משפחתית שנוסדה בשנת 1995. אצלינו השרות עם חיוך ואחריות.
           הכוונה שלנו היא להשפיע על השפעות חיוביות להעשיר את חייהם של אחרים,
@@ -37,8 +38,7 @@ export function HomePage() {
 
       <CategoryIndex />
 
-
-      <ProductIndexWrapper
+      <ProductIndexFromService
         title="הנמכרים ביותר"
         filterBy={{ sort: "salesAmount", amount: 6 }}
       />

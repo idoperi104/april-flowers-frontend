@@ -19,9 +19,7 @@ export function CategoryPage() {
   useEffect(() => {
     loadCategory()
 
-    return () => {
-      dispatch(setFilterBy(productService.getEmptyFilterBy()))
-    }
+    return () => {}
   }, [categories, params.name])
 
   useEffectUpdate(() => {
