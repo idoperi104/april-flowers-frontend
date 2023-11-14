@@ -10,7 +10,7 @@ import { Link, Outlet } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus } from "@fortawesome/free-solid-svg-icons"
 import { AdminCategoryFilter } from "../../cmps/admin/AdminCategoryFilter"
-import { categoryService } from "../../services/category.service.local"
+import { categoryService } from "../../services/category.service"
 
 export function AdminCategoryIndex() {
   const categories = useSelector(

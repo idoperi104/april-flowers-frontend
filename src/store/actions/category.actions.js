@@ -1,4 +1,4 @@
-import { categoryService } from "../../services/category.service.local"
+import { categoryService } from "../../services/category.service"
 import {
   REMOVE_CATEGORY,
   SET_CATEGORIES,
@@ -38,7 +38,6 @@ export function removeCategory(categoryId) {
 }
 
 export function saveCategory(category) {
-  console.log("category: ", category)
   return async (dispatch) => {
     try {
       const savedCategory = await categoryService.save({ ...category })
@@ -48,7 +47,6 @@ export function saveCategory(category) {
         action = { type: UPDATE_CATEGORY, category: savedCategory }
       else action = { type: ADD_CATEGORY, category: savedCategory }
 
-      console.log("action: ", action)
       dispatch(action)
       return "saved!"
     } catch (error) {

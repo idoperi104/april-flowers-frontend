@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom"
-import { categoryService } from "../../services/category.service.local"
+import { categoryService } from "../../services/category.service"
 import { useEffect, useRef } from "react"
 import { useFormRegister } from "../../customHooks/useFormRegister"
 import {
