@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { productService } from "../services/product.service.local"
+import { productService } from "../services/product.service"
 import { ProductList } from "./ProductList"
 import { useDispatch } from "react-redux"
 import { addCartItem, toggleIsOpen } from "../store/actions/cart.actions"

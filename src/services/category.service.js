@@ -1,6 +1,4 @@
-import { storageService } from "./async-storage.service.js"
 import { httpService } from './http.service.js'
-import data from "../assets/json/category.json"
 
 const STORAGE_KEY = "category"
 
@@ -12,7 +10,6 @@ export const categoryService = {
   getEmptyCategory,
   getEmptyFilterBy,
 }
-window.rs = categoryService
 
 async function query(filterBy = { name: "" }) {
     return httpService.get(STORAGE_KEY, filterBy)

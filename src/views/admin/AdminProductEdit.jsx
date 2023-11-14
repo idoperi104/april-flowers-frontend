@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom"
-import { productService } from "../../services/product.service.local"
+import { productService } from "../../services/product.service"
 import { useEffect, useRef } from "react"
 import { useFormRegister } from "../../customHooks/useFormRegister"
 import { useDispatch, useSelector } from "react-redux"

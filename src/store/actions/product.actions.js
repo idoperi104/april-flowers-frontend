@@ -1,4 +1,4 @@
-import { productService } from "../../services/product.service.local"
+import { productService } from "../../services/product.service"
 import {
   REMOVE_PRODUCT,
   SET_PRODUCTS,

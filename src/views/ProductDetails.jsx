@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
-import { productService } from "../services/product.service.local"
+import { productService } from "../services/product.service"
 import { loadCategories } from "../store/actions/category.actions"
 import {
   addCartItem,

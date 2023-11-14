@@ -1,7 +1,7 @@
 import { ProductIndex } from "../views/ProductIndex"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { productService } from "../services/product.service.local"
+import { productService } from "../services/product.service"
 import { setFilterBy } from "../store/actions/product.actions"
 
 export function ProductIndexWrapper({title = "", filterBy = {}, size=""}) {
