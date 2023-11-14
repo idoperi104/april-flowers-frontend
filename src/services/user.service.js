@@ -1,9 +1,8 @@
 import { storageService } from "./async-storage.service"
-// import { httpService } from './http.service'
+import { httpService } from './http.service'
 
 import data from "../assets/json/user.json"
 
-// import { store } from '../store/store'
 // import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from './socket.service'
 // import { showSuccessMsg } from './event-bus.service'
 
@@ -24,24 +23,22 @@ export const userService = {
   // changeScore,
 }
 
-window.userService = userService
-// window.loadUsers = loadUsers
 
 async function getUsers(filterBy = { txt: "" }) {
-  let users = await storageService.query(STORAGE_KEY)
+  // let users = await storageService.query(STORAGE_KEY)
 
-  if (!users || users.length === 0) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
-    users = data
-  }
+  // if (!users || users.length === 0) {
+  //   localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+  //   users = data
+  // }
 
-  if (filterBy.txt) {
-    const regex = new RegExp(filterBy.txt, "i")
-    users = users.filter((user) => regex.test(user.fullname))
-  }
-  return users
+  // if (filterBy.txt) {
+  //   const regex = new RegExp(filterBy.txt, "i")
+  //   users = users.filter((user) => regex.test(user.fullname))
+  // }
+  // return users
 
-  // return await httpService.get(`user`, filterBy)
+  return await httpService.get(`user`, filterBy)
 }
 
 // function onUserUpdate(user) {
@@ -50,8 +47,8 @@ async function getUsers(filterBy = { txt: "" }) {
 // }
 
 async function getById(userId) {
-  const user = await storageService.get("user", userId)
-  // const user = await httpService.get(`user/${userId}`)
+  // const user = await storageService.get("user", userId)
+  const user = await httpService.get(`user/${userId}`)
 
   // socketService.emit(SOCKET_EMIT_USER_WATCH, userId)
   // socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
@@ -61,16 +58,16 @@ async function getById(userId) {
 }
 
 function remove(userId) {
-  return storageService.remove("user", userId)
-  // return httpService.delete(`user/${userId}`)
+  // return storageService.remove("user", userId)
+  return httpService.delete(`user/${userId}`)
 }
 
 async function update(user) {
-  console.log("user: ", user)
-  const updatedUser = await getById(user._id)
-  user = await storageService.put("user", {...updatedUser, ...user})
+  console.log("update user: ", user)
+  // const updatedUser = await getById(user._id)
+  // user = await storageService.put("user", {...updatedUser, ...user})
 
-  // user = await httpService.put(`user/${user._id}`, user)
+  user = await httpService.put(`user/${user._id}`, user)
 
   // Handle case in which admin updates other user's details
   // if (getLoggedinUser()._id === user._id) _saveLocalUser(user);
@@ -82,13 +79,13 @@ async function update(user) {
 async function login(userCred) {
   // console.log("userCred: ", userCred);
 
-  const users = await storageService.query("user")
-  const user = users.find(
-    (user) =>
-      user.username === userCred.username && user.password === userCred.password
-  )
+  // const users = await storageService.query("user")
+  // const user = users.find(
+  //   (user) =>
+  //     user.username === userCred.username && user.password === userCred.password
+  // )
 
-  // const user = await httpService.post('auth/login', userCred)
+  const user = await httpService.post('auth/login', userCred)
 
   if (user) {
     // socketService.login(user._id)
@@ -97,9 +94,9 @@ async function login(userCred) {
 }
 
 async function signup(userCred) {
-  const user = await storageService.post("user", userCred)
+  // const user = await storageService.post("user", userCred)
 
-  // const user = await httpService.post('auth/signup', userCred)
+  const user = await httpService.post('auth/signup', userCred)
 
   // socketService.login(user._id)
 
@@ -107,9 +104,9 @@ async function signup(userCred) {
 }
 
 async function logout() {
-  sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
+  // sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
   // socketService.logout()
-  // return await httpService.post('auth/logout')
+  return await httpService.post('auth/logout')
 }
 
 function getLoggedinUser() {

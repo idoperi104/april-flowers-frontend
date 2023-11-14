@@ -36,7 +36,6 @@ export function removeUser(userId) {
 }
 
 export function updateUser(user) {
-  console.log("user: ----", user)
   return async (dispatch) => {
     try {
       const action = { type: UPDATE_USER, user }
