@@ -57,7 +57,7 @@ function AdminUserPreview({ user, onToggleAdmin }) {
       </h3>
       <h3 className="name">
         <span>שם משתמש: </span>
-        {user.fullname}
+        {user.username}
       </h3>
       <button className="btn" onClick={() => onToggleAdmin(user)}>
         {user.isAdmin ? "הסר מניהול" : "הפוך למנהל"}

@@ -36,7 +36,7 @@ export function LoginSignup() {
     if (!loginCred.username || !loginCred.password) return
     try {
       dispatch(login({ ...loginCred }))
-      navigate("/")
+      navigate("/admin/orders")
     } catch (err) {
       console.error(err)
     }
@@ -64,6 +64,11 @@ export function LoginSignup() {
 
   function toogleIsLogin() {
     setIsLogin((prevIsLogin) => !prevIsLogin)
+  }
+
+  function onDemoLogin() {
+    dispatch(login({ username: "ido", password: "ido" }))
+    navigate("/admin/orders")
   }
 
   return (
@@ -120,9 +125,15 @@ export function LoginSignup() {
         </form>
       )}
 
-      <button className="btn-full" onClick={toogleIsLogin}>
-        {isLogin ? "רישום משתמש חדש" : "כניסת מנהל"}
-      </button>
+      <div>
+        <button className="btn-demo" onClick={onDemoLogin}>
+          כניסת מנהל דמו להצגה
+        </button>
+
+        <button className="btn-full" onClick={toogleIsLogin}>
+          {isLogin ? "רישום משתמש חדש" : "כניסת מנהל"}
+        </button>
+      </div>
     </section>
   )
 }

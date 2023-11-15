@@ -23,6 +23,21 @@ export function loadCartItems() {
   }
 }
 
+export function resetCartItems() {
+  return async (dispatch) => {
+    try {
+      const cartItems = cartService.reset()
+      const action = {
+        type: SET_CART_ITEMS,
+        cartItems,
+      }
+      dispatch(action)
+    } catch (error) {
+      console.log("error:", error)
+    }
+  }
+}
+
 export function removeCartItem(cartItemId) {
   return async (dispatch) => {
     try {
@@ -93,38 +108,6 @@ export function updateCartItemQuantity(cartItem, num) {
     }
   }
 }
-
-// export function getPriceCartItems() {
-//   return async (dispatch, getState) => {
-//     try {
-//       const cartItems = getState().cartModule.cartItems
-
-//       const productIdsQuantity = cartItems.map((cartItem) => ({
-//         productId: cartItem.productId,
-//         quantity: cartItem.quantity,
-//       }))
-
-//       console.log("productIdsQuantity: ", productIdsQuantity)
-//     } catch (error) {
-//       console.log("error:", error)
-//     }
-//   }
-// }
-
-// export function updateCategoryKeyVal(category, key, val) {
-//   return async (dispatch) => {
-//     try {
-//       category = await categoryService.save({ ...category, [key]: val })
-//       const action = { type: UPDATE_CATEGORY, category }
-//       dispatch(action)
-//       return "Updated!"
-//     } catch (error) {
-//       console.log("error:", error)
-//     }
-//   }
-// }
-
-// Filter by:
 
 export function toggleIsOpen() {
   return async (dispatch, getState) => {

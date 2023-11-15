@@ -9,6 +9,7 @@ export const cartService = {
   remove,
   addCartItem,
   getPriceCartItems,
+  reset,
   //   getEmptyProduct,
   //   getEmptyFilterBy,
 }
@@ -22,6 +23,12 @@ function query() {
   }
 
   return cartItems
+}
+
+function reset() {
+  const emptyList = []
+  storageService.reset(STORAGE_KEY)
+  return emptyList
 }
 
 function getById(cartItemId) {

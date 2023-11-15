@@ -4,11 +4,16 @@ export const storageService = {
   post,
   put,
   remove,
+  reset
 }
 
 function query(entityType) {
   const entities = JSON.parse(localStorage.getItem(entityType))
   return entities
+}
+
+function reset(entityType){
+  _save(entityType, [])
 }
 
 function get(entityType, entityId) {

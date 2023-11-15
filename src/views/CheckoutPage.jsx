@@ -3,7 +3,7 @@ import { useFormRegister } from "../customHooks/useFormRegister"
 import { orderService } from "../services/order.service"
 import { useEffect } from "react"
 import {
-  getPriceCartItems,
+  resetCartItems,
   setIsCartOpen,
   updateCartItemQuantity,
 } from "../store/actions/cart.actions"
@@ -39,6 +39,7 @@ export function CheckoutPage() {
 
   async function onSaveOrder(ev) {
     ev.preventDefault()
+    dispatch(resetCartItems())
     try {
       await orderService.save({ ...order, isPaid: true, createdAt: Date.now() })
       navigate("/")
