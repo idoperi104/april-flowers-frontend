@@ -34,6 +34,7 @@ ProductIndex() {
   }
 
   if (!products || isLoading) return <div>Loading...</div>
+  
   return (
     <section className="product-index">
       <ProductList products={products} onAddToCart={onAddToCart} />

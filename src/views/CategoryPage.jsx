@@ -3,7 +3,6 @@ import { ProductIndex } from "./ProductIndex"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import { setFilterBy } from "../store/actions/product.actions"
-import { useEffectUpdate } from "../customHooks/useEffectUpdate"
 import { productService } from "../services/product.service"
 
 export function CategoryPage() {
@@ -18,13 +17,7 @@ export function CategoryPage() {
 
   useEffect(() => {
     loadCategory()
-
-    return () => {}
   }, [categories, params.name])
-
-  useEffectUpdate(() => {
-    dispatch(setFilterBy({ category: category.name }))
-  }, [category])
 
   async function loadCategory() {
     const categoryName = params.name
@@ -34,6 +27,7 @@ export function CategoryPage() {
           (category) => category.name === categoryName
         )
         setCategory(category)
+        dispatch(setFilterBy({ category: category.name }))
       } catch (error) {
         console.log("error:", error)
       }
