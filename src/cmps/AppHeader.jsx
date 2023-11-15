@@ -13,13 +13,10 @@ export function AppHeader() {
   const loggedinUser = useSelector(
     (storeState) => storeState.userModule.loggedinUser
   )
+  const cartItems = useSelector((storeState) => storeState.cartModule.cartItems)
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
-
-  const numOfItems = useSelector(
-    (storeState) => storeState.cartModule.cartItems.length
-  )
 
   const isMenuOpen = useSelector(
     (storeState) => storeState.appModule.isMenuOpen
@@ -55,6 +52,11 @@ export function AppHeader() {
     if (isMenuOpen) dispatch(setIsMenuOpen(false))
   }
 
+  function getNumOfItems(){
+    const initialValue = 0
+    return cartItems.reduce((acc, cartItem) => acc + cartItem.quantity, initialValue)
+  }
+
   return (
     <header className="app-header">
       <section className="actions-container">
@@ -63,9 +65,9 @@ export function AppHeader() {
         </button>
         <button onClick={onToggleCart} className="btn-cart">
           <FontAwesomeIcon icon={faCartShopping} />
-          {numOfItems ? (
+          {getNumOfItems() ? (
             <div className="num-of-items">
-              <span>{numOfItems}</span>
+              <span>{getNumOfItems()}</span>
             </div>
           ) : null}
         </button>
