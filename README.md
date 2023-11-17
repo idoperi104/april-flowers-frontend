@@ -1,5 +1,3 @@
-![Logo](screenshots/logo.png)
-
 # April Flowers
 
 Welcome to April Flowers, the ultimate online e-commerce flowers store where managers effortlessly control their products, ensuring a seamless and efficient inventory management experience. For users, our platform promises a unique and delightful shopping adventure with an extensive collection of handpicked bouquets. 
@@ -12,8 +10,6 @@ You can access the deployed application at https://april-flowers.onrender.com/#/
 
 - [Features](#features)
 - [Technology Stack](#technology-stack)
-- [Screenshots](#screenshots)
-- [Mobile](#mobile)
 - [Getting Started](#getting-started)
 
 ## Features
@@ -45,73 +41,6 @@ You can access the deployed application at https://april-flowers.onrender.com/#/
 - MongoDB
 - bcrypt
 - socket.io
-
-## Screenshots - Admin Panel
-
-### Orders Page
-![Orders Page](screenshots/orders.png)
-
-The orders page featurs orders management and filtering, and the option to change if the order is paid and shipped.
-
-### Categories Page
-![Categories Page](screenshots/categories.png)
-
-The categories page featurs categories management: add, delete, edit, include category image and theme image.
-
-### Products Page
-![Products Page](screenshots/products.png)
-
-The products page featurs products management: add, delete and edit. include filtering by name, category and stock.
-
-### Managers Page
-![Managers Page](screenshots/managers.png)
-
-The managers page featurs managers management: the ability of other admin to make a new user for admin.
-
-## Screenshots
-
-### Home Page
-![Home Page](screenshots/homepage-1.png)
-
-The April Flowers home page features a hero section, descriptin, list of our categories, most popular products and more.
-
-### Collection Page
-![Collection Page](screenshots/collectionpage.png)
-
-The collection page features our categoties and our products.
-
-### Category Page
-![Category Page](screenshots/categorypage.png)
-
-The category page features the products of selected category.
-
-### Product Details Page
-![Product Details](screenshots/productdetails.png)
-
-The product details page features all the product information, and a action button for adding to cart.
-
-### Cart
-![Cart](screenshots/cart.png)
-
-The cart featues all the selected products, quantity, price and an action button for checkout.
-
-### Checkout Page
-![Checkout](screenshots/checkout.png)
-
-The checkout page allows the user to write the relevant information for the order and to finish the order.
-
-### Login Page
-![Login](screenshots/login.png)
-
-The Login page allows the admin to enter the admin panel, and has a demo login button.
-
-
-
-## Mobile
-
-<img src="screenshots/7.png" width=25%/><img src="screenshots/8.png" width=25%/><img src="screenshots/9.png" width=25%/><img src="screenshots/10.png" width=25%/>
-<img src="screenshots/1.png" width=33.33%/><img src="screenshots/2.png" width=33.33%/><img src="screenshots/3.png" width=33.33%/>
-<img src="screenshots/4.png" width=33.33%/><img src="screenshots/5.png" width=33.33%/><img src="screenshots/6.png" width=33.33%/>
 
 ## Getting Started
 
