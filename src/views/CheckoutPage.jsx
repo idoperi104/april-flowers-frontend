@@ -39,6 +39,7 @@ export function CheckoutPage() {
   }
 
   async function onSaveOrder(ev) {
+    ev.preventDefault()
     dispatch(resetCartItems())
     try {
       await orderService.save({ ...order, isPaid: true, createdAt: Date.now() })
@@ -47,7 +48,6 @@ export function CheckoutPage() {
     } catch (error) {
       console.log("error:", error)
     }
-    ev.preventDefault()
   }
 
   function onUpdateCartItemQuantity(cartItem, num) {
