@@ -9,6 +9,7 @@ import {
 } from "../store/actions/cart.actions"
 import { CartList } from "../cmps/CartList"
 import { useNavigate } from "react-router-dom"
+import { SOCKET_EMIT_NEW_ORDER, SOCKET_EMIT_SET_TOPIC, socketService } from "../services/socket.service"
 
 export function CheckoutPage() {
   const [register, order, handleChange, setOrder] = useFormRegister({
@@ -42,6 +43,7 @@ export function CheckoutPage() {
     dispatch(resetCartItems())
     try {
       await orderService.save({ ...order, isPaid: true, createdAt: Date.now() })
+      socketService.emit(SOCKET_EMIT_NEW_ORDER, "new order")
       navigate("/")
     } catch (error) {
       console.log("error:", error)

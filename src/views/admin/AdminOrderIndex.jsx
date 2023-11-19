@@ -9,6 +9,11 @@ import {
 import { AdminOrderList } from "../../cmps/admin/AdminOrderList"
 import { AdminOrderFilter } from "../../cmps/admin/AdminOrderFilter"
 import { utilService } from "../../services/util.service"
+import {
+  SOCKET_EMIT_SET_TOPIC,
+  SOCKET_EVENT_ADD_ORDER,
+  socketService,
+} from "../../services/socket.service"
 
 export function AdminOrderIndex() {
   const orders = useSelector((storeState) => storeState.orderModule.orders)
@@ -36,8 +41,17 @@ export function AdminOrderIndex() {
 
   useEffect(() => {
     dispatch(loadOrders())
-    return () => {}
+    socketService.emit(SOCKET_EMIT_SET_TOPIC, "admin-orders")
+    socketService.on(SOCKET_EVENT_ADD_ORDER, onAddOrder)
+
+    return () => {
+      socketService.off(SOCKET_EVENT_ADD_ORDER)
+    }
   }, [])
+
+  function onAddOrder() {
+    dispatch(loadOrders())
+  }
 
   const onChangeFilter = utilService.debounce((filterBy) => {
     dispatch(setOrderFilterBy(filterBy))
