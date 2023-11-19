@@ -40,10 +40,10 @@ export function CheckoutPage() {
 
   async function onSaveOrder(ev) {
     ev.preventDefault()
-    dispatch(resetCartItems())
     try {
       await orderService.save({ ...order, isPaid: true, createdAt: Date.now() })
       socketService.emit(SOCKET_EMIT_NEW_ORDER, "new order")
+      dispatch(resetCartItems())
       navigate("/")
     } catch (error) {
       console.log("error:", error)
